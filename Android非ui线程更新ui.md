@@ -36,6 +36,12 @@ runOnUiThread(new Runnable() {
 ###### 方案三
 新建一个BaseApplication的类用来管理Context ，Handler，在需要更新ui的时候调用BaseApplication.getHandler().post(),用这个方法可以在一定程度上减少context和thread问题
 
+Context 可应用的组件或控件
+
+- activity
+- service
+- 基于全局显示的控件
+
 ```xml
 //在manifest.xml文件中需要添加入口
 <application
@@ -65,6 +71,8 @@ public class BaseApplication extends Application {
     }
 }
 ```
+调用代码
+
 ```java
 BaseApplication.getHandler().post(new Runnable() {
 	@Override
@@ -73,4 +81,3 @@ BaseApplication.getHandler().post(new Runnable() {
 	}
 });
 ```
-
