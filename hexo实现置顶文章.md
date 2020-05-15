@@ -2,6 +2,7 @@
 title: hexo实现置顶文章
 tags:
   - hexo
+abbrlink: 28f80600
 date: 2020-04-11 11:18:24
 ---
 

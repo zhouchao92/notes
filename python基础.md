@@ -3,6 +3,7 @@ title: python基础
 tags:
   - python
   - notes
+abbrlink: 81b2f4bf
 date: 2020-04-03 12:00:00
 ---
 

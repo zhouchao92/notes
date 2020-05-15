@@ -3,6 +3,7 @@ title: hexo+yilia+github搭建个人博客
 tags:
   - hexo
   - 个人博客
+abbrlink: 73e911cd
 date: 2020-04-05 12:00:00
 ---
 

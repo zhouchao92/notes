@@ -3,6 +3,7 @@ title: javascrpit基础语法
 tags:
   - java script
   - notes
+abbrlink: 95725add
 date: 2020-04-03 12:00:00
 ---
 

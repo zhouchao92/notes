@@ -6,6 +6,7 @@ tags:
   - for-each
   - 枚举
   - notes
+abbrlink: 6d197383
 date: 2020-04-19 22:56:58
 ---
 

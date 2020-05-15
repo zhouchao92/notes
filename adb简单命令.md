@@ -2,6 +2,7 @@
 title: adb简单命令
 tags:
   - adb
+abbrlink: 9632f7ff
 date: 2020-04-03 12:00:00
 ---
 

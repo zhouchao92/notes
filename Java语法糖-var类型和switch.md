@@ -6,6 +6,7 @@ tags:
   - var
   - switch
   - notes
+abbrlink: ab1a490c
 date: 2020-04-20 13:06:13
 ---
 

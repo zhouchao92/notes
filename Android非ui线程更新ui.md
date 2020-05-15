@@ -3,6 +3,7 @@ title: Android非ui线程更新ui
 tags:
   - android
   - ui
+abbrlink: 89935aa5
 date: 2020-04-03 12:00:00
 ---
 

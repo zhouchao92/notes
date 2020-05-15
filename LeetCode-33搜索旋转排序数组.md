@@ -2,6 +2,7 @@
 title: 'LeetCode--#33搜索旋转排序数组'
 tags:
   - leetcode
+abbrlink: 69254e2b
 date: 2020-04-28 21:12:06
 ---
 

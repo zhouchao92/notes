@@ -2,6 +2,7 @@
 title: 'LeetCode--#46全排列'
 tags:
   - leetcode
+abbrlink: 6d9b5c12
 date: 2020-04-28 21:14:09
 ---
 

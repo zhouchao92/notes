@@ -2,6 +2,7 @@
 title: 'LeetCode--#1两数之和'
 tags:
   - leetcode
+abbrlink: eb1f9a79
 date: 2020-04-28 20:59:53
 ---
 

@@ -2,6 +2,7 @@
 title: hexo误删本地文件
 tags:
   - hexo
+abbrlink: 18f8dfb9
 date: 2020-04-08 22:08:11
 ---
 
