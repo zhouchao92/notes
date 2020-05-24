@@ -36,6 +36,8 @@ Java并发编程
 - Executor框架
 - Fork-Join框架
 
+<!--more-->
+
 #### 线程组ThreadGroup
 
 - 线程的集合
