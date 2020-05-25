@@ -7,8 +7,10 @@ abbrlink: 8e40d0ad
 date: 2020-04-03 12:00:00
 ---
 
-## SQL语句
+# MySQL语句
+
 ### 数据库的常用操作
+
 #### 登陆服务器
 `mysql -h服务器地址 -u用户名 -p密码`（不安全）  
 
@@ -115,7 +117,7 @@ Query OK, 0 rows affected (0.01 sec)
 #### 查看当前使用的数据库
 `select database();`  
 
-```sql
+```mysql
 mysql> select database();
 
 +------------+
@@ -139,12 +141,12 @@ Database changed
 #### 创建数据表
 `create table 数据表名称 (字段1 数据类型，字段2 数据类型，字段3 数据类型,...);` 
 
-- 字段数据类型 
-	-  int 
-	- varchar(长度) 
-	- double 
-	- bit
-	- datetime
+- 字段类型 
+	-  int ：整数 -2147483648~2147483647，4个字节
+	- varchar(长度) ： 字符串，可变字节
+	- double ： 小数，8个字节
+	- datetime：时间，7个字节
+	- bit(M)：位数据类型，默认为1位，0或1
 
 ```sql
 mysql> create table demolist(
