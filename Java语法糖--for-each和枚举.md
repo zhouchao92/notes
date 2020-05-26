@@ -1,7 +1,7 @@
 ---
 title: Java语法糖for-each和枚举
 tags:
-  - Java
+  - java
   - 语法糖
   - for-each
   - 枚举
