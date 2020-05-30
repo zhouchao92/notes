@@ -12,7 +12,7 @@ date: 2020-04-03 12:00:00
 adb devices
 ```
 ###### 2. 设备重新挂载 
-  ----对android的内部系统文件进行查看,需要获得root权限(adb root)
+对android的内部系统文件进行查看,需要获得root权限(adb root)，模拟器Android 6.0以后需要第三方软件root才能成功
 ```shell
 adb remount
 //有的Android系统需要两次root才能挂载
@@ -42,7 +42,8 @@ adb -s 设备名称(devices查看) 命令
 - 打印当前路径    pwd
 - 创建文件/文件夹    touch 文件名 / mkdir 文件夹名
 - 复制文件    cp &nbsp; 原文件名(绝对路径)  (路径)新文件名
-- 删除文件/文件夹    rm  文件名 /  rm-r  文件夹名
+- 移动文件   mv &nbsp; 原文件名(绝对路径)  (路径)新文件名
+- 删除文件/文件夹    rm  文件名 /  rm -r 文件夹名
 - 文本内容查看    cat 文件名(注意带后缀) (*.后缀名 打开本路径下所有的此后缀的文件) 
 - 清除屏幕	clear
 
@@ -53,7 +54,7 @@ adb push (本地)文件路径 (android)文件新路径
 ```
 ###### 把文件拖出系统
 ```shell
-adb pull (android)文件新路径 (本地)文件路径
+adb pull (android)文件路径 (本地)文件路径
 ```
 #### logcat
 ###### 捕捉
@@ -88,3 +89,28 @@ adb shell pm clear 包名路径
 ```shell
 adb uninstall 包名路径	
 ```
+
+#### 发送广播
+
+```shell
+adb shell broadcast -a [action] 参数[--类型 key value]
+```
+
+#### 截屏
+
+截图，存放在指定位置，拖出系统到当前路径下
+
+```shell
+adb shell screencap -p /sdacrd/screen.png
+adb pull /sdcard/screen.png ./
+```
+
+#### 模拟按键
+
+```shell
+adb shell input keyevent 键码(keycode)
+eg.home键
+adb shell input ketevent 3
+```
+
+键码可查看 `android.view.KeyEvent.java`文件

@@ -1,9 +1,10 @@
 ---
 title: SpringBoot笔记
-date: 2020-05-28 09:35:50
 tags:
-	- spring boot
-	- notes
+  - spring boot
+  - notes
+abbrlink: e94425f6
+date: 2020-05-28 09:35:50
 ---
 
 # SpringBoot笔记
@@ -28,6 +29,8 @@ tags:
 **CURRENT**：最新版，不一定是稳定版
 
 **GA**：General Availability 正式发布的版本
+
+<!--more-->
 
 #### 创建基于SpringBoot的项目
 
