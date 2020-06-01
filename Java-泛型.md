@@ -45,6 +45,8 @@ public E get(int index) {
 }
 ```
 
+<!--more-->
+
 ###### 自定义泛型设计
 
 泛型类
