@@ -532,7 +532,7 @@ public class FirstFilter implements Filter {
 
 ```java
 /**
- * 整合Servlet方式二
+ * 整合Filter方式二
  */
 public class SecondFilter implements Filter {
 
@@ -703,6 +703,8 @@ Teammates目录用来存放Thymeleaf的页面
 
 ###### SpringBoot访问静态资源的位置
 
+> classpath:	与java文件夹同级的resources目录
+
 classpath:/META-INF/resources/
 
 classpath:/resources/
@@ -712,4 +714,229 @@ classpath:/static/
 classpath:/public/
 
 ###### 自定义静态资源位置
+
+在application.properties文件中配置
+
+```properties
+spring.resources.static-locations=classpath:/自定义资源位置1/,classpath:/自定义资源位置2/
+```
+
+#### SpringBoot文件上传
+
+创建项目
+
+配置POM文件
+
+启动类
+
+编写上传页面
+
+```html
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>SpringBoot文件上传</title>
+</head>
+
+<body>
+<form action="/fileUploadController" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>
+```
+
+编写Controller
+
+```java
+@RestController
+public class FileUploadController {
+
+    /**
+     * 文件上传
+     *
+     * @param file 参数名必须与fileupload.xml中的input标签的value值一致
+     * @return
+     * @throws IOException
+     */
+    @PostMapping("/fileUploadController")
+    public String fileUpload(MultipartFile file) throws IOException {
+        System.out.println(file.getOriginalFilename());
+        file.transferTo(new File("D:/upload/" + file.getOriginalFilename()));
+        return "OK";
+    }
+}
+
+```
+
+修改上传文件大小
+
+```properties
+# 设置单文件上传的容量限制
+spring.servlet.multipart.max-file-size=2MB
+# 配置在一次请求中上传文件总容量的限制
+spring.servlet.multipart.max-request-size=20MB
+```
+
+#### SpringBoot整合视图层技术
+
+##### SpringBoot整合JSP技术
+
+创建项目
+
+修改POM文件，添加JSP引擎与JSTL标签库
+
+```xml
+<!--添加jsp引擎依赖，SpringBoot内置Tomcat没有此依赖-->
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-jsper</artifactId>
+</dependency>
+<!--添加JSTL标签库依赖-->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+</dependency>
+```
+
+创建webapp目录
+
+main目录下与java、resource同级
+
+标记为web目录
+
+创建JSP
+
+修改配置文件，配置视图解析器
+
+```properties
+# 前缀
+spring.mvc.view.prefix=/WEB-INF/jsp/
+# 后缀
+spring.mvc.view.suffix=.jsp
+```
+
+创建Controller
+
+```java
+@Controller
+public class PageController {
+    // 页面跳转
+    @GetMapping("/{page}")
+    public String showPage(@PathVariable String page) {
+        return page;
+    }
+}
+```
+
+如果在IDEA中项目为聚合工程，在运行jsp时是需要指定路径。
+
+##### SpringBoot整合Freemarker
+
+创建项目
+
+修改POM文件，添加Freemarker启动器
+
+```xml
+<!--Freemarker依赖-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-freemarker</artifactId>
+</dependency>
+```
+
+创建User实体
+
+```java
+public class User {
+    private String uname;
+    private String gender;
+    private int age;
+
+    public User() {
+    }
+
+    public User(String uname, String gender, int age) {
+        this.uname = uname;
+        this.gender = gender;
+        this.age = age;
+    }
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+```
+
+创建Controller
+
+```java
+@Controller
+public class UserController {
+    @GetMapping("/showUsers")
+    public String showUsers(Model model) {
+        List<User> list = new ArrayList<>();
+        list.add(new User("张三", "男", 20));
+        list.add(new User("李四", "男", 22));
+        list.add(new User("王五", "男", 18));
+        model.addAttribute("list", list);
+        return "userlist";
+    }
+}
+```
+
+创建视图 `templates/userlist.ftl`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringBoot整合Freemarker</title>
+</head>
+<body>
+<table border="1px" align="center" width="50%">
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+    </tr>
+    <#list list as user>
+        <tr>
+            <td>${user.uname}</td>
+            <td>${user.gender}</td>
+            <td>${user.age}</td>
+        </tr>
+    </#list>
+</table>
+</body>
+</html>
+```
+
+配置Freemarker文件后缀（SpringBoot2.x后默认为.ftlh）
+
+```properties
+spring.freemarker.suffix=.ftl
+```
 
