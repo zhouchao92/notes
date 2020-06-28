@@ -19,11 +19,12 @@ SpringMVC通过一套注解，让一个简单的Java类成为处理请求的控�
 
 ##### 开发步骤
 
-```mermaid
-graph TB;
-	导入SpringMVC相关依赖包-->B["配置SpringMVC核心控制器<b>DispatcherServlet</b>"]-->编写Controller类和视图页面--"@Controller与@RequestMapping"-->将Controller使用注解配置到Spring容器中-->A["配置spring-mvc.xml文件(配置组件扫描)"]-->客户端发起请求测试
-
-```
+1. 导入SpringMVC相关依赖包
+2. 配置SpringMVC核心控制器<b>DispatcherServlet</b>
+3. 编写Controller类和视图页面--"@Controller与@RequestMapping"
+4. 将Controller使用注解配置到Spring容器中
+5. 配置spring-mvc.xml文件(配置组件扫描)
+6. 客户端发起请求测试
 
 ##### SpringMVC中重要组件
 
@@ -39,28 +40,28 @@ ViewResolver：视图解析器，解析结果，准备跳转到具体的物理�
 
 View：视图
 
-##### SpringMVC运行原理图
+##### SpringMVC运行原理
 
-```mermaid
-graph TB;
-	U["客户端"]--Tomcat发送请求-->A[前端控制器<i>DispatcherServlet</i>]--请求查询Handler-->B[处理器映射器<i>HandlerMapping</i>]-->C[HandlerAdapter]-->D[Controller]-->E[ViewResolver]
-
-	E--Tomcat响应-->U
-	B--返回处理器执行链HandlerExecuctionChain-->A
-```
+1. 客户端向Tomcat发送请求
+2. 前端控制器DispatcherServlet--请求查询Handler
+3. 处理器映射器HandlerMapping
+4. HandlerAdapter
+5. Controller
+6. ViewResolver
+7. 前端控制器返回处理器执行链HandlerExecuctionChain
 
 ##### SpringMVC注解@RequestMappping
 
 ###### @RequestMappping
 
-作用：用于建立i请求URL和处理方法之间的对应关系
+作用：用于建立请求URL和处理方法之间的对应关系
 
-位置
+**位置**
 
 - 类：请求URL的第一级访问目录，此处不写就相当于应用的根目录
 - 方法：请求URL的第二级访问目录，与类上使用的@RequestMapping标注的一级目录一起组成访问虚拟路径
 
-属性
+**属性**
 
 - value：用于指定请求的URL，和path属性的作用是一样的
 - method：用于指定请求的方式
@@ -305,10 +306,9 @@ SpringMVC默认已经提供了一些常用的类型转换器，例如客户端�
 
 自定义类型转换器开发步骤
 
-```mermaid
-graph TB;
-	定义转换器类实现Convert接口-->在配置文件中声明转换器-->C[在<annotation-driven>标签中引用转换器]
-```
+1. 定义转换器类实现Convert接口
+2. 在配置文件中声明转换器
+3. 在`<annotation-driven>`标签中引用转换器
 
 ###### 自定义日期类型转换器
 
@@ -387,10 +387,9 @@ public void paramDate(@PathVariable(value = "date") Date date) {
 
 ###### 单文件上传步骤
 
-```mermaid
-graph LR;
-	A(导入fileupload和io坐标)-->B(配置文件上传解析器)-->C(编写文件上传代码)
-```
+1. 导入fileupload和io坐标
+2. 配置文件上传解析器
+3. 编写文件上传代码
 
 ```xml
 <dependency>
@@ -477,10 +476,9 @@ SpringMVC的拦截器类似于Servlet开发中的过滤器Filter，用于对处�
 
 ##### 自定义拦截器步骤
 
-```mermaid
-graph TB;
-创建拦截器类实现HandlerInterceptor接口-->配置拦截器-->测试拦截器的拦截效果
-```
+1. 创建拦截器类实现HandlerInterceptor接口
+2. 配置拦截器
+3. 测试拦截器的拦截效果
 
 `HandlerInterceptor`接口源码
 
@@ -526,13 +524,8 @@ public interface HandlerInterceptor {
 
 系统的Dao、Service、Controller出现都通过throws Exception向上抛出，最后由SpringMVC前端控制器交由异常处理器进行异常处理。
 
-```mermaid
-graph LR;
-A[客户端]--请求-->B[前端控制器]--请求-->C[Controller]--请求-->D[Service]--请求-->E[Dao]
-E--异常-->D--异常-->C--异常-->B--响应-->A
-
-B-->HandlerExceptionResolver
-```
+客户端--请求-->前端控制器--请求-->Controller--请求-->Service--请求-->Dao
+处理：前端控制器-->HandlerExceptionResolver
 
 ##### SpringMVC异常处理两种方式
 
@@ -558,13 +551,10 @@ B-->HandlerExceptionResolver
 
 ###### 自定义异常处理步骤
 
-```mermaid
-graph TB;
-创建异常处理类实现HandlerExceptionResolver-->
-配置异常处理器-->
-编写异常页面-->
-测试异常跳转
-```
+- 创建异常处理类实现HandlerExceptionResolver
+- 配置异常处理器
+- 编写异常页面
+- 测试异常跳转
 
 ```java
 public class MyExceptionResolver implements HandlerExceptionResolver {
