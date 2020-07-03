@@ -203,7 +203,7 @@ Spring Boot 提供多达 44 个启动器
 >
 > spring-boot-starter-actuator 帮助监控和管理应用
 >
-> spring-boot-starter-web 支持全栈式Web开发，包括Tomcat 和 spring-webmve
+> spring-boot-starter-web 支持全栈式Web开发，包括Tomcat 和 spring-webmvc
 >
 > spring-boot-starter-amqp 通过spring-rabbit 来支持AMQP协议(Advanced Message Queuing Protocol)
 >
@@ -280,27 +280,27 @@ resources/application.yml
 
 ###### 占位符语法
 
-语法：${}
+语法：`${}`
 
 ###### 占位符作用
 
-${}中可以获取框架提供的方法中的值，如：random.int ...
+`${}`中可以获取框架提供的方法中的值，如：`random.int` ...
 
 占位符可以获取配置文件中的键的值赋给另一个键作为值
 
 ###### 生成随机数
 
-${random.value}  类似于uuid的随机数，没有 - 连接
+`${random.value}`  类似于uuid的随机数，没有 - 连接
 
-${random.int} 随机取整型范围内的一个值
+`${random.int}` 随机取整型范围内的一个值
 
-${random.long} 随机取长整型范围内的一个值
+`${random.long}` 随机取长整型范围内的一个值
 
-${random.uuid} 生成一个uuid，有 - 连接
+`${random.uuid}` 生成一个uuid，有 - 连接
 
-${random.int(value)} 随机生成value以内的整型的值
+`${random.int(value)}` 随机生成value以内的整型的值
 
-${random.int(value,max)} 随机生成value-max之间的整型的值
+`${random.int(value,max)}` 随机生成value-max之间的整型的值
 
 ##### bootstrap配置文件
 
@@ -329,17 +329,17 @@ bootstrap 配置文件应用场景：
 
 ###### @SpringBootApplication
 
-Spring Boot的启动类
+配置Spring Boot的启动类
 
-等同于 @Configuration + @EnableAutoConfiguration + @ComponentScan 的组合
+等同于 `@Configuration` + `@EnableAutoConfiguration` + `@ComponentScan` 的组合
 
 ###### @SpringBootConfiguration
 
-@SpringBootConfiguration 是 @Configuration 注解的派生注解，跟 @Configuration注解的功能一致，标注这个类是一个配置类，只不过@SpringBootConfiguration 是 springboot的注解，而@Configuration 是 spring的注解
+`@SpringBootConfiguration` 是 @`Configuration` 注解的派生注解，跟 `@Configuration`注解的功能一致，标注这个类是一个配置类，只不过`@SpringBootConfiguration` 是 springboot的注解，而`@Configuration` 是 spring的注解
 
 ###### @Configuration
 
-通过对bean对象的操作替代 spring 中 xml 文件
+通过对bean对象的操作替代 spring 中 的xml 配置文件
 
 ###### @EnableAutoConfiguration
 
@@ -348,7 +348,7 @@ Spring Boot 自动配置：根据添加的jar依赖自动配置Spring应用
 
 ###### @AutoConfigurationPackage
 
-自动注入主类下所在包下所有的加了注解的类(@Controller，@Service)
+自动注入主类下所在包下所有的加了注解的类(`@Controller`，`@Service`)
 
 ###### @Import({AutoConfigurationImportSelector.class})
 
@@ -365,7 +365,7 @@ Spring Boot 自动配置：根据添加的jar依赖自动配置Spring应用
 
 扫描配置属性
 
-作用：使用 @ConfigurationProperties 注解的类生效
+作用：使用 `@ConfigurationProperties` 注解的类生效
 
 ##### 编写HelloWord
 
@@ -439,17 +439,15 @@ public class FirstServlet extends HttpServlet {
 }
 ```
 
-- 修改启动类，添加@ServletComponentScan注解
+- 修改启动类，添加`@ServletComponentScan`注解
 
-```java
-@ServletComponentScan   //在SpringBoot启动时会扫描@WebServlet注解，并将该类实例化
-```
+  在SpringBoot启动时会扫描`@WebServlet`注解，并将该类实例化
 
 ###### 整合Servlet方式二
 
 通过方法完成Servlet组件的注册
 
-- 创建Servlet 	servlet/SecondServlet.java
+- 创建Servlet 	`servlet/SecondServlet.java`
 
 ```java
 /**
@@ -462,7 +460,7 @@ public class SecondServlet extends HttpServlet {
 }
 ```
 
-- 创建Servlet配置类	 config/ServletConfig.java
+- 创建Servlet配置类	 `config/ServletConfig.java`
 
 ```java
 /**
@@ -490,7 +488,7 @@ public class ServletConfig {
 
 通过注解扫描完成Filter组件的注册
 
-- 创建Filter	filter/FisrtFilter.java
+- 创建Filter	`filter/FisrtFilter.java`
 
 ```java
 /**
@@ -518,17 +516,13 @@ public class FirstFilter implements Filter {
 }
 ```
 
-- 修改启动类，添加 @ServletComponentScan 注解
-
-```java
-@ServletComponentScan
-```
+- 修改启动类，添加 `@ServletComponentScan` 注解
 
 ###### 整合Filter方式二
 
 通过方法完成Filter组件的注册
 
-- 创建Filter	filter/SecondFilter.java
+- 创建Filter	`filter/SecondFilter.java`
 
 ```java
 /**
@@ -556,7 +550,7 @@ public class SecondFilter implements Filter {
 }
 ```
 
-- 创建Filter配置类 config/SecondFilter.java
+- 创建Filter配置类 `config/SecondFilter.java`
 
 ```java
 /**
@@ -581,7 +575,7 @@ public class FilterConfig {
 
 通过注解扫描完成Listener组件注册
 
-- 编写Listener	 listener/FirstListener.java
+- 编写Listener	 `listener/FirstListener.java`
 
 ```java
 /**
@@ -611,17 +605,13 @@ public class FirstListener implements ServletContextListener {
 
 ```
 
-- 修改启动类 添加 @ServletComponentScan 注解
-
-```java
-@ServletComponentScan
-```
+- 修改启动类 添加 `@ServletComponentScan` 注解
 
 ###### 整合Listener方式二
 
 通过方法完成Listener组件的注册
 
-- 创建Listener 	listener/SecondListener.java
+- 创建Listener 	`listener/SecondListener.java`
 
 ```java
 /**
@@ -649,7 +639,7 @@ public class SecondListener implements ServletContextListener {
 }
 ```
 
-- 创建Listener配置类 	config/ListenerConfig.java
+- 创建Listener配置类 	`config/ListenerConfig.java`
 
 ```java
 /**
@@ -667,18 +657,19 @@ public class ListenerConfig {
 
 #### SpringBoot访问静态资源
 
-在SpringBoot项目中没有常规web开发的WevContent(WebApp)，它只有src目录。在src/main/resources下面有两个文件夹，static和templates。SpringBoot默认在static目录存放静态页面，而templates中放动态页面
+在SpringBoot项目中没有常规web开发的WebContent(WebApp)，它只有src目录。在src/main/resources下面有两个文件夹，static和templates。SpringBoot默认在static目录存放静态页面，而templates中放动态页面。
 
 ##### static目录
 
 SpringBoot 通过classpath/static 目录访问静态资源
+
 存放静态资源的目录名称必须是static
 
 > 文件：static/index.html
 >
 > 直接访问：[http://localhost:8080/index.html](http://localhost:8080/index.html)
 
-通过controller跳转访问	controller/IndexPageController
+通过controller跳转访问	controller/IndexPageController.java
 
 ```java
 @Controller
@@ -697,6 +688,7 @@ public class IndexPageController {
 ##### templtates目录
 
 SpringBoot 中不推荐使用jsp作为视图层技术，而是默认使用Thymeleaf来做动态页面
+
 Teammates目录用来存放Thymeleaf的页面
 
 ##### 静态资源存放其他位置
@@ -723,13 +715,10 @@ spring.resources.static-locations=classpath:/自定义资源位置1/,classpath:/
 
 #### SpringBoot文件上传
 
-创建项目
-
-配置POM文件
-
-启动类
-
-编写上传页面
+- 创建项目
+- 配置POM文件
+- 编写启动类
+- 编写上传页面
 
 ```html
 <html>
