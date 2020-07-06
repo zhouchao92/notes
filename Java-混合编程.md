@@ -1,6 +1,8 @@
 ---
 title: Java--混合编程
 tags:
+  - 混合编程
+categories:
   - java
   - notes
 abbrlink: 6d00d2a2

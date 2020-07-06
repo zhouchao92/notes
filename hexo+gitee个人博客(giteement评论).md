@@ -1,9 +1,10 @@
 ---
 title: hexo上传至gitee以及添加gitee评论功能
 tags:
-  - hexo
   - gitee
   - giteement
+categories:
+  - hexo
 abbrlink: 6dfbadcb
 date: 2020-04-09 17:05:22
 ---

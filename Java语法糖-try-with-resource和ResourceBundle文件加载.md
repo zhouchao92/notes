@@ -1,11 +1,12 @@
 ---
 title: Java语法糖--try-with-resource和ResourceBundle文件加载
 tags:
-  - java
-  - 语法糖
   - try-with-resource
   - Resource Bundle
+categories:
+  - java
   - notes
+  - 语法糖
 abbrlink: 868afa36
 date: 2020-04-20 12:35:57
 ---

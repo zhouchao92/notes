@@ -1,8 +1,9 @@
 ---
 title: Java--多线程
 tags:
-  - java
   - 多线程
+categories:
+  - java
   - notes
 abbrlink: '83776954'
 date: 2020-05-15 22:33:51

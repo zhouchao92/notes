@@ -1,6 +1,6 @@
 ---
 title: python语法
-tags:
+catrgories:
   - python
   - notes
 abbrlink: 81b2f4bf

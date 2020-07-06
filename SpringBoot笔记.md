@@ -2,7 +2,9 @@
 title: SpringBoot笔记
 tags:
   - spring boot
+categories:
   - notes
+  - 后端
 abbrlink: e94425f6
 date: 2020-06-29 09:35:50
 ---

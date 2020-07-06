@@ -1,8 +1,9 @@
 ---
 title: android studio低版本使用recyclerview
 tags:
-  - android
   - recyclerview
+categories:
+  - android
 abbrlink: f71edc35
 date: 2020-04-03 12:00:00
 ---

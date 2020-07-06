@@ -1,12 +1,13 @@
 ---
 title: Java语法糖--自动装箱与拆箱、多异常并列和数值类型赋值优化
 tags:
-  - java
-  - 语法糖
   - 自动装箱与拆箱
   - 多异常并列
   - 数值类型赋值优化
+categories:
+  - java
   - notes
+  - 语法糖
 abbrlink: e81b4a74
 date: 2020-04-20 10:59:10
 ---

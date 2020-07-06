@@ -1,8 +1,9 @@
 ---
 title: '短暂解决ConnectionRefusedError:WinError 10061问题'
 tags:
-  - python
   - requests
+categories:
+  - python
 abbrlink: 9d9c9508
 date: 2020-04-03 12:00:00
 ---

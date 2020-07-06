@@ -1,6 +1,6 @@
 ---
 title: 'LeetCode--面试题#51数组中的逆序对'
-tags:
+categories:
   - leetcode
 abbrlink: 9fbcfe23
 date: 2020-04-25 10:43:20

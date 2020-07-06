@@ -3,6 +3,8 @@ title: mysql基础
 tags:
   - mysql
   - 数据库
+categories:
+  - notes
 abbrlink: 8e40d0ad
 date: 2020-04-03 12:00:00
 ---

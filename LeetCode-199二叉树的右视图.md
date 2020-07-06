@@ -1,6 +1,6 @@
 ---
 title: 'LeetCode--#199二叉树的右视图'
-tags:
+categories:
   - leetcode
 abbrlink: 60a087a9
 date: 2020-04-22 12:08:07

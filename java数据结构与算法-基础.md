@@ -1,6 +1,6 @@
 ---
 title: java数据结构与算法--基础
-tags:
+categories:
   - java
   - 数据结构与算法
   - notes

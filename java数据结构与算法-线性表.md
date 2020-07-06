@@ -1,6 +1,8 @@
 ---
 title: java数据结构与算法--线性表
 tags:
+  - 线性表
+categories:
   - java
   - 数据结构与算法
   - notes

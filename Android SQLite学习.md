@@ -1,8 +1,10 @@
 ---
 title: android sqlite学习
 tags:
-  - android
   - sqlite
+categories:
+  - android
+  - notes
 abbrlink: eb7c6dc
 date: 2020-04-03 12:00:00
 ---

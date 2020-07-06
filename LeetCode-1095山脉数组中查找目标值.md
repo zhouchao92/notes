@@ -1,6 +1,6 @@
 ---
 title: 'LeetCode--#1095山脉数组中查找目标值'
-tags:
+categories:
   - leetcode
 abbrlink: 8d630654
 date: 2020-04-29 20:17:43

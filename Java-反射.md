@@ -1,8 +1,9 @@
 ---
 title: Java--反射
 tags:
-  - java
   - 反射
+categories:
+  - java
   - notes
 abbrlink: 87b8a7bb
 date: 2020-05-31 22:01:42

@@ -1,8 +1,9 @@
 ---
 title: hexo添加RSS订阅功能
 tags:
+  - rss
+categories:
   - hexo
-  - RSS
 abbrlink: b9d63583
 date: 2020-04-17 13:25:53
 ---

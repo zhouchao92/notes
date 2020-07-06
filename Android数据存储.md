@@ -1,8 +1,9 @@
 ---
 title: Android数据的存储
 tags:
-  - android
   - 数据存储
+categories:
+  - android
 abbrlink: 56c6f16a
 date: 2020-04-03 12:00:00
 ---

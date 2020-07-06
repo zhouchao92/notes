@@ -1,6 +1,8 @@
 ---
 title: java数据结构与算法--串
 tags:
+  - 串
+categories:
   - java
   - 数据结构与算法
   - notes

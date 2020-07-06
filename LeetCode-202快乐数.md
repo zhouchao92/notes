@@ -1,6 +1,6 @@
 ---
 title: 'LeetCode--#202快乐数'
-tags:
+categories:
   - leetcode
 abbrlink: 6cd30686
 date: 2020-04-30 10:24:48

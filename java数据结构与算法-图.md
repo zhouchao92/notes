@@ -1,6 +1,8 @@
 ---
 title: java数据结构与算法--图
 tags:
+  - 图
+categories:
   - java
   - 数据结构与算法
   - notes

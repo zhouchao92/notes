@@ -1,6 +1,8 @@
 ---
 title: java数据结构与算法--树和二叉树
 tags:
+  - 二叉树
+categories:
   - java
   - 数据结构与算法
   - notes

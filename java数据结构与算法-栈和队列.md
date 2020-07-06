@@ -1,6 +1,9 @@
 ---
 title: java数据结构与算法--栈和队列
 tags:
+  - 栈
+  - 队列
+categories:
   - java
   - 数据结构与算法
   - notes

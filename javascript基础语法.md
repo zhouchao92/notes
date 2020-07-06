@@ -2,7 +2,9 @@
 title: javascrpit基础语法
 tags:
   - java script
+categories:
   - notes
+  - web
 abbrlink: 95725add
 date: 2020-04-03 12:00:00
 ---
@@ -333,20 +335,24 @@ d.getSeconds();      //返回当前时间的秒数
 - 创建随机数字
             
         
+        
             `Math.random();`    //返回0-1之间的随机数，不包括0和1
         
 - 向下取整
             
+        
         
             `Math.floor();`
         
 - 向上取整
             
         
+        
             `Math.ceil();`
         
 - 四舍五入
             
+        
         
             `Math.round();`
         

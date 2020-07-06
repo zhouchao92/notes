@@ -1,6 +1,6 @@
 ---
 title: 'LeetCode--#200岛屿数量'
-tags:
+categories:
   - leetcode
 abbrlink: c2dfdd41
 date: 2020-04-21 19:14:08

@@ -1,9 +1,10 @@
 ---
 title: chrome抓包抓取动态网站json数据
 tags:
-  - python
   - json
   - chrome抓包
+categories:
+  - python
 abbrlink: aea01abd
 date: 2020-04-03 12:00:00
 ---
