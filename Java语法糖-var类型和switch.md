@@ -4,8 +4,8 @@ tags:
   - var
   - switch
 categories:
-  - java
   - notes
+  - java
   - 语法糖
 abbrlink: ab1a490c
 date: 2020-04-20 13:06:13

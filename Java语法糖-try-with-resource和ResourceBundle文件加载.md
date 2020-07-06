@@ -4,8 +4,8 @@ tags:
   - try-with-resource
   - Resource Bundle
 categories:
-  - java
   - notes
+  - java
   - 语法糖
 abbrlink: 868afa36
 date: 2020-04-20 12:35:57

@@ -3,8 +3,8 @@ title: Java--混合编程
 tags:
   - 混合编程
 categories:
-  - java
   - notes
+  - java
 abbrlink: 6d00d2a2
 date: 2020-05-26 10:45:45
 ---

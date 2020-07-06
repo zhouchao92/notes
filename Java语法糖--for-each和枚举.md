@@ -4,8 +4,8 @@ tags:
   - for-each
   - 枚举
 categories:
-  - java
   - notes
+  - java
   - 语法糖
 abbrlink: 6d197383
 date: 2020-04-19 22:56:58

@@ -3,8 +3,8 @@ title: Java--反射
 tags:
   - 反射
 categories:
-  - java
   - notes
+  - java
 abbrlink: 87b8a7bb
 date: 2020-05-31 22:01:42
 ---

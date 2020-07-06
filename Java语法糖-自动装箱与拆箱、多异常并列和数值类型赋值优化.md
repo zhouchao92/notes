@@ -5,8 +5,8 @@ tags:
   - 多异常并列
   - 数值类型赋值优化
 categories:
-  - java
   - notes
+  - java
   - 语法糖
 abbrlink: e81b4a74
 date: 2020-04-20 10:59:10

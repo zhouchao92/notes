@@ -3,8 +3,8 @@ title: Java--xml文件解析
 tags:
   - xml解析
 categories:
-  - java
   - notes
+  - java
 abbrlink: 7fb4a625
 date: 2020-04-26 10:59:01
 ---

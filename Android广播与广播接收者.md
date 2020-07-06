@@ -3,8 +3,8 @@ title: android四大组件--broadcast
 tags:
   - broadcast
 categories:
-  - android
   - notes
+  - android
 abbrlink: c231612
 date: 2020-04-03 12:00:00
 ---
