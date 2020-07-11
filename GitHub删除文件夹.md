@@ -1,8 +1,9 @@
 ---
 title: GitHub删除文件夹
-date: 2020-07-07 20:07:52
 tags:
-	- git
+  - git
+abbrlink: bab8a3bc
+date: 2020-07-07 20:07:52
 categories:
 ---
 

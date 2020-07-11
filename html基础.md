@@ -44,7 +44,13 @@ date: 2020-04-03 12:00:00
 #### 标题标签
 
 ```html
-<h(序号) > </h(序号)>s
+<h(序号) > </h(序号)>
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h4>四级标题</h4>
+<h5>五级标题</h5>
+<h6>六级标题</h6>
 ```
 
 h1到h6：数据加粗显示，显示依次减弱，标题标签自动换行(属于块级标签)
@@ -153,7 +159,7 @@ a标签   href 要跳转的网页资源路径
 
 <font color="#f00">超链接标签中一定要声明访问方式，可以是文字也可以是图片</font>
 
-锚点：
+##### 锚点
 
 作用：在一张网页中进行资源跳转
 
@@ -167,7 +173,7 @@ a标签   href 要跳转的网页资源路径
 
 #### 表格标签
 
-table 
+table
 
 - tr 声明一行
 - th声明一个单元格，表头格，默认居中加黑显示
@@ -250,13 +256,26 @@ method：收集的数据的提交方式
 
 <font color="#f00">form标签会收集其标签内部的数据</font>
 
-<font color="#f00">form表单的数据提交需要依赖于submit提交按钮(value)</font>
+<font color="#f00">form表单的数据提交需要依赖于submit提交按钮</font>
+
+<font color="#f00">表单数据提交的是表单域标签的value值</font>
+
+form表单标签的使用：在点击数据提交时，form标签会将其内部所有form表单域标签中用户书写的数据按照method指明的提交方式提交给action属性所指明的提交地址
 
 form表单域标签
 
 作用：给用户提供可以进行数据书写或者选择的标签
 
 使用：
+
+```html
+<!--账号密码的提交-->
+<form action="" method="post">
+	账号:<input type="text" name="" value=""/>
+    密码:<input type="text" name="" value=""/>
+    <input type="submit" value="提交">
+</form>
+```
 
 ###### 文本框：input
 
@@ -265,19 +284,31 @@ form表单域标签
   - password 收集用户密码数据
 
 - name：数据提交的键，也会被js使用
+
 - value：默认值
+
+  ```html
+  <input type="text" name="" value=""/>
+  <input type="password" name="" value=""/>
+  ```
 
 ###### 单选框：input
 
 type：`radio`
 
 - name：属性值相同的单选框只能选择一项数据
+
 - value：要提交的数据
+
 - checked：使用此属性的单选默认是选择状态
+
+  ```html
+  <input type="radio" name="" value="" checked=""/>
+  ```
 
 ###### 多选框：input
 
-`type：  checkbox`
+type：`checkbox`
 
 - name：一个多远组需要使用相同的name属性值
 - value：要提交的数据
@@ -289,7 +320,7 @@ name：数据提交的键名，必须声明
 
 子标签 option：一个option标签表示一个下拉选项   
 
-​	value：要提交的数据
+value：要提交的数据
 
 ###### 文本域 input
 
@@ -303,23 +334,24 @@ name：数据提交的键名，必须声明
 
 ###### 普通按钮: input
 
-​	type：button
+type：button
 
-​	value
+value 按钮显示的文字内容
 
 ###### 隐藏标签 input
 
-​	type：hidden
+type：hidden
 
-​	name
+name
 
-​	value
+value
 
-<font color="#f00">表单数据提交的是表单域标签的value值</font>>
+一般用于提交给服务器作为方法标识，不显示在网页上。
 
-form表单标签的使用：在点击数据提交时，form标签会将其内部所有form表单域标签中用户书写的数据按照method指明的提交方式提交给action属性所指明的提交地址
+#### 编译预显示
 
 将源代码显示在浏览器页面中  
+
 ```html
 <pre></pre>浏览预显示
 <>需要进行替换，否则浏览器会编译执行
