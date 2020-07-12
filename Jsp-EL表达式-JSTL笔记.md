@@ -57,6 +57,8 @@ Tomcat只能识别Servlet，用户访问jsp文件，服务器用JspServlet将jsp
 
 <font color='blue'>JSP负责页面展现，Sevlet负责业务逻辑处理</font>
 
+<!--more-->
+
 #### Jsp的语法和指令
 
 Jsp三大指令
