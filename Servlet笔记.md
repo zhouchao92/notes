@@ -9,8 +9,6 @@ abbrlink: bc07bc32
 date: 2020-07-11 22:25:05
 ---
 
-#### Servlet
-
 ##### 概述
 
 - 狭义的Servlet是指Java语言实现的一个接口
@@ -138,6 +136,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
+       	<meta charset="UTF-8">
         <title>Title</title>
     </head>
     <body>
