@@ -39,7 +39,7 @@ date: 2020-08-18 13:29:17
 修改`Solr\server\solr\example_core\conf\managed-schema`，在\<schema\>标签内添加文章相关配置
 
 - field 为字段名
-- \<copyField source="字段名" dest="search_item"/>  作为搜索项
+- \<copyField source="字段名" dest="search_item"/\>  作为搜索项
 
 ```xml
 <!-- 文章 -->
