@@ -970,8 +970,8 @@ public class AnnotationTest {
 | :---------: | :----------------------------------------------------------: |
 |  @Results   | 代替的是标签\<resultMap>,该注解中可以使用单个@Result注解，也可以使用@Result结合。使用格式：@Results({@Result(),@Result()})或@Results(@Result()) |
 |   @Result   | 代替了\<id>标签和\<result>标签<br />@Result中属性介绍<br />column：数据库的列名<br />property：需要装配的属性名<br />one：需要使用的@One注解，@Result(one=@One()<br />many：需要使用的@Many注解，@Result(many=@Many()) |
-| @One一对多  | 代替了\<assocation>标签，是多表查询的关键，在注解中用来指定子查询返回单一对象。@One注解属性介绍<br />select：指定用来多表查询的sqlmapper<br />使用格式：@Result(column="".propety="",one=@One(select="")) |
-| @Many多对一 | 代替了\<collection>标签，是多表查询的关键，在注解中用来指定子查询返回对象集合，使用格式：@Result(column="".propety="",many=@Many(select="")) |
+| @One一对多  | 代替了\<assocation>标签，是多表查询的关键，在注解中用来指定子查询返回单一对象。@One注解属性介绍<br />select：指定用来多表查询的sqlmapper<br />使用格式：@Result(column="",property="",one=@One(select="")) |
+| @Many多对一 | 代替了\<collection>标签，是多表查询的关键，在注解中用来指定子查询返回对象集合，使用格式：@Result(column="",property="",many=@Many(select="")) |
 
 ###### 一对多查询
 
