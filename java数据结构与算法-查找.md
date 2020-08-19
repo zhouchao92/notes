@@ -169,17 +169,17 @@ AVL、红黑树[RBT](https://baike.baidu.com/item/%E7%BA%A2%E9%BB%91%E6%A0%91)�
 
 B-树：在它内部结点中存储键值，但不需在叶子结点上存储这些键值的记录
 
-![B-树.jpg](https://gitee.com/zyy92/Pictures/raw/master/Btree/B-树.jpg)
+![B-树.jpg](https://gitee.com/lao-biao/Pictures/raw/master/Btree/B-树.jpg)
 
 B+树：在B-树基础上，为叶子结点增加链表指针，所有关键字都在叶子结点中出现，非叶子结点作为叶子结点的索引，B+树总是到叶子结点才命中
 
 数据库的索引的默认数据结构就是采用B+树
 
-![B+树.jpg](https://gitee.com/zyy92/Pictures/raw/master/Btree/B+树.jpg)
+![B+树.jpg](https://gitee.com/lao-biao/Pictures/raw/master/Btree/B+树.jpg)
 
 B*树：B+树的变体，在B+树的非根和非子叶结点再增加指向兄弟的指针
 
-![B*树.jpg](https://gitee.com/zyy92/Pictures/raw/master/Btree/B※树.jpg)
+![B*树.jpg](https://gitee.com/lao-biao/Pictures/raw/master/Btree/B※树.jpg)
 
 #### 哈希表查找
 
@@ -201,11 +201,11 @@ hashtable：散列表
 
 - 顺序表+链表：主结构是顺序表，每个顺序表的结点在单独引出一个链表
 
-  ![hashtable顺序表&链表结构.jpg](https://gitee.com/zyy92/Pictures/raw/master/Hashtable/hashtable顺序表&链表结构.jpg)
+  ![hashtable顺序表&链表结构.jpg](https://gitee.com/lao-biao/Pictures/raw/master/Hashtable/hashtable顺序表&链表结构.jpg)
 
   哈希表初始操作状态
 
-  ![hashtable初始操作状态.jpg](https://gitee.com/zyy92/Pictures/raw/master/Hashtable/hashtable初始操作状态.jpg)
+  ![hashtable初始操作状态.jpg](https://gitee.com/lao-biao/Pictures/raw/master/Hashtable/hashtable初始操作状态.jpg)
 
 ###### 哈希表添加数据
 
@@ -218,7 +218,7 @@ hashtable：散列表
 
 哈希表最终状态
 
-![hashtable最终状态.jpg](https://gitee.com/zyy92/Pictures/raw/master/Hashtable/hashtable最终状态.jpg)
+![hashtable最终状态.jpg](https://gitee.com/lao-biao/Pictures/raw/master/Hashtable/hashtable最终状态.jpg)
 
 ###### 哈希表查找、删除、更新
 

@@ -44,7 +44,7 @@ date: 2020-06-29 09:35:50
 
 > [spring initializr](https://start.spring.io/)
 
-![官网创建项目](https://gitee.com/zyy92/Pictures/raw/master/Spring/官网创建项目.png)
+![官网创建项目](https://gitee.com/lao-biao/Pictures/raw/master/Spring/官网创建项目.png)
 
 填写完信息后点击`Generate`即可生成文件，下载解压后就是一个项目
 
@@ -54,19 +54,19 @@ date: 2020-06-29 09:35:50
 
 - 打开创建项目,选择 Spring Initializr ，选择对应的JDK路径和URL
 
-  ![IDEA 的 Spring Initalizr创建项目](https://gitee.com/zyy92/Pictures/raw/master/Spring/IDEA-Spring-Initializr.png)
+  ![IDEA 的 Spring Initalizr创建项目](https://gitee.com/lao-biao/Pictures/raw/master/Spring/IDEA-Spring-Initializr.png)
 
 - 填写项目设置
 
-  ![IDEA 的 Spring Initalizr创建项目](https://gitee.com/zyy92/Pictures/raw/master/Spring/IDEA-Spring-Initializr-Project-Settings.png)
+  ![IDEA 的 Spring Initalizr创建项目](https://gitee.com/lao-biao/Pictures/raw/master/Spring/IDEA-Spring-Initializr-Project-Settings.png)
 
 - 添加依赖和SpringBoot版本
 
-  ![IDEA 的 Spring Initalizr创建项目](https://gitee.com/zyy92/Pictures/raw/master/Spring/IDEA-Spring-Initializr-Dependencies.png)
+  ![IDEA 的 Spring Initalizr创建项目](https://gitee.com/lao-biao/Pictures/raw/master/Spring/IDEA-Spring-Initializr-Dependencies.png)
 
 - 选择项目名和路径，以及其他设置
 
-  ![IDEA 的 Spring Initalizr创建项目](https://gitee.com/zyy92/Pictures/raw/master/Spring/IDEA-Spring-Initializr-Name-Location.png)
+  ![IDEA 的 Spring Initalizr创建项目](https://gitee.com/lao-biao/Pictures/raw/master/Spring/IDEA-Spring-Initializr-Name-Location.png)
 
 ###### IDEA的Maven项目
 

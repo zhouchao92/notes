@@ -14,7 +14,7 @@ date: 2020-04-19 21:34:50
 
 ###### 介绍
 
-`BaseApplication.getAppContext()`见文章--[Android子线程更新ui](/2020/04/03/Android非ui线程更新ui)
+`BaseApplication.getAppContext()`
 
 使用：`ToastUtils.showToast(message);`
 

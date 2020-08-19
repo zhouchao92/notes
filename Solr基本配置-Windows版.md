@@ -17,7 +17,7 @@ Solr下载地址 [https://lucene.apache.org/solr/downloads.html](https://lucene.
 
 ##### Solr目录结构
 
-![Solr目录结构](https://gitee.com/zyy92/Pictures/raw/master/Solr/solr目录结构.png)
+![Solr目录结构](https://gitee.com/lao-biao/Pictures/raw/master/Solr/solr目录结构.png)
 
 <!--more-->
 
@@ -102,7 +102,7 @@ Created new core 'example_core'
 
 访问地址：http://localhost:8983/solr/#/example_core/core-overview
 
-![solr侧栏工具](https://gitee.com/zyy92/Pictures/raw/master/Solr/solr%E4%BE%A7%E6%A0%8F%E5%B7%A5%E5%85%B7.png)
+![solr侧栏工具](https://gitee.com/lao-biao/Pictures/raw/master/Solr/solr%E4%BE%A7%E6%A0%8F%E5%B7%A5%E5%85%B7.png)
 
 ###### 添加中文分词器
 
@@ -111,7 +111,7 @@ Created new core 'example_core'
 1. 添加配置文件：
    下载 https://github.com/magese/ik-analyzer-solr/releases/tag/v8.3.0
 
-   ![中文分词器资源文件](https://gitee.com/zyy92/Pictures/raw/master/Solr/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6.png)将`ik-analyzer-solr-8.3.0\src\main\resources`路径下的5个配置文件拷贝到`Solr\server\solr-webapp\webapp\WEB-INF\classes`目录下
+   ![中文分词器资源文件](https://gitee.com/lao-biao/Pictures/raw/master/Solr/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6.png)将`ik-analyzer-solr-8.3.0\src\main\resources`路径下的5个配置文件拷贝到`Solr\server\solr-webapp\webapp\WEB-INF\classes`目录下
 
    ```shell
    ① IKAnalyzer.cfg.xml
@@ -155,5 +155,5 @@ Field Value ：Solr的中文分词器
 
 分析结果
 
-![中文分词器示例](https://gitee.com/zyy92/Pictures/raw/master/Solr/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8%E7%A4%BA%E4%BE%8B.png)
+![中文分词器示例](https://gitee.com/lao-biao/Pictures/raw/master/Solr/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8%E7%A4%BA%E4%BE%8B.png)
 

@@ -13,11 +13,11 @@ date: 2020-07-14 23:03:22
 
 ##### java从编码到执行
 
-![Java从编码到执行](https://gitee.com/zyy92/Pictures/raw/master/JVM/Java从编码到执行.png)
+![Java从编码到执行](https://gitee.com/lao-biao/Pictures/raw/master/JVM/Java从编码到执行.png)
 
 ##### JVM：从跨平台的语言到跨语言的平台
 
-![从跨平台的语言到跨语言的平台](https://gitee.com/zyy92/Pictures/raw/master/JVM/跨平台语言与跨语言平台.png)
+![从跨平台的语言到跨语言的平台](https://gitee.com/lao-biao/Pictures/raw/master/JVM/跨平台语言与跨语言平台.png)
 
 ##### jvm
 
@@ -89,7 +89,7 @@ JRE：核心库+jvm，运行java环境
 
 JVM：运行最终的字节码文件
 
-![JDK-JRE-JVM](https://gitee.com/zyy92/Pictures/raw/master/JVM/JDK-JRE-JVM.png)
+![JDK-JRE-JVM](https://gitee.com/lao-biao/Pictures/raw/master/JVM/JDK-JRE-JVM.png)
 
 <!--more-->
 
@@ -160,11 +160,11 @@ Java 不采用RC（Reference Count）算法，而是采用RS（Root Searching）
 
 ###### Mark-Sweep 标记清除
 
-![Mark Sweep算法](https://gitee.com/zyy92/Pictures/raw/master/JVM/Mark-Sweep-1.png)
+![Mark Sweep算法](https://gitee.com/lao-biao/Pictures/raw/master/JVM/Mark-Sweep-1.png)
 
 标记清除算法流程
 
-![Mark Sweep算法](https://gitee.com/zyy92/Pictures/raw/master/JVM/Mark-Sweep-2.png)
+![Mark Sweep算法](https://gitee.com/lao-biao/Pictures/raw/master/JVM/Mark-Sweep-2.png)
 
 优点：
 
@@ -178,11 +178,11 @@ Java 不采用RC（Reference Count）算法，而是采用RS（Root Searching）
 
 ###### Copying 复制
 
-![Copying算法](https://gitee.com/zyy92/Pictures/raw/master/JVM/Copying-1.png)
+![Copying算法](https://gitee.com/lao-biao/Pictures/raw/master/JVM/Copying-1.png)
 
 复制算法流程
 
-![Copying算法](https://gitee.com/zyy92/Pictures/raw/master/JVM/Copying-2.png)
+![Copying算法](https://gitee.com/lao-biao/Pictures/raw/master/JVM/Copying-2.png)
 
 优点：
 
@@ -197,11 +197,11 @@ Java 不采用RC（Reference Count）算法，而是采用RS（Root Searching）
 
 ###### Mark Compact 标记压缩
 
-![Mark Compact算法](https://gitee.com/zyy92/Pictures/raw/master/JVM/Mark-Compact-1.png)
+![Mark Compact算法](https://gitee.com/lao-biao/Pictures/raw/master/JVM/Mark-Compact-1.png)
 
 标记压缩算法流程
 
-![Mark Compact算法](https://gitee.com/zyy92/Pictures/raw/master/JVM/Mark-Compact-2.png)
+![Mark Compact算法](https://gitee.com/lao-biao/Pictures/raw/master/JVM/Mark-Compact-2.png)
 
 优点：
 
@@ -221,7 +221,7 @@ Java 不采用RC（Reference Count）算法，而是采用RS（Root Searching）
 
 ###### 常见垃圾回收器分类
 
-![垃圾收集器分类](https://gitee.com/zyy92/Pictures/raw/master/JVM/垃圾收集器分类.png)
+![垃圾收集器分类](https://gitee.com/lao-biao/Pictures/raw/master/JVM/垃圾收集器分类.png)
 
 Young、Old 分代模型，新生代和老生代配合使用
 
@@ -240,7 +240,7 @@ G1：物理上不分代，逻辑上分代
 
 老年代存活率高，回收较少，采用MC（Mark Compact）或MS（Mark Sweep）
 
-![堆内存逻辑分区](https://gitee.com/zyy92/Pictures/raw/master/JVM/堆内存逻辑分区.png)
+![堆内存逻辑分区](https://gitee.com/lao-biao/Pictures/raw/master/JVM/堆内存逻辑分区.png)
 
 CMS：经过6次GC-->老年代
 
@@ -252,7 +252,7 @@ MinorGC/YGC：年轻代空间耗尽时触发
 
 MajorGC/FullGC：在老年代无法继续分配空间时触发，新生代老年代同时进行回收
 
-![GC概念](https://gitee.com/zyy92/Pictures/raw/master/JVM/GC概念.png)
+![GC概念](https://gitee.com/lao-biao/Pictures/raw/master/JVM/GC概念.png)
 
 ###### GC详解
 
@@ -304,11 +304,11 @@ FGC
 
 通过参数：`-XX:MaxTenuringThreshold`配置
 
-![一个对象从出生到消亡](https://gitee.com/zyy92/Pictures/raw/master/JVM/一个对象从出生到消亡.png)
+![一个对象从出生到消亡](https://gitee.com/lao-biao/Pictures/raw/master/JVM/一个对象从出生到消亡.png)
 
 ###### 总结
 
-![GC总结](https://gitee.com/zyy92/Pictures/raw/master/JVM/GC总结.png)
+![GC总结](https://gitee.com/lao-biao/Pictures/raw/master/JVM/GC总结.png)
 
 ###### ParNew垃圾回收器
 
@@ -323,13 +323,13 @@ PS（Parallel Scavenge）的变种，用来配合CMS使用。
 
 此种组合基本不使用，效率太低
 
-![Serial](https://gitee.com/zyy92/Pictures/raw/master/JVM/Serial.png)
+![Serial](https://gitee.com/lao-biao/Pictures/raw/master/JVM/Serial.png)
 
 - 串行
 - STW
 - 单线程拷贝算法（工作在年轻代）
 
-![Serial-Old](https://gitee.com/zyy92/Pictures/raw/master/JVM/Serial-Old.png)
+![Serial-Old](https://gitee.com/lao-biao/Pictures/raw/master/JVM/Serial-Old.png)
 
 ###### Parallel Scavenge垃圾回收器
 
@@ -364,7 +364,7 @@ A compacting collector that uses multiple GC threads.
 
 三色扫描算法：白灰黑
 
-![三色标记算法](https://gitee.com/zyy92/Pictures/raw/master/JVM/三色标记算法.png)
+![三色标记算法](https://gitee.com/lao-biao/Pictures/raw/master/JVM/三色标记算法.png)
 
 在并发按标记时，引用可能产生变化，白色对象有可能被错误回收
 

@@ -335,20 +335,20 @@ postman
 - 请求url：http://localhost:8000/test/solr
 - 请求方式：post
 
-![solr添加文章](https://gitee.com/zyy92/Pictures/raw/master/Solr/solr%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0.png)
+![solr添加文章](https://gitee.com/lao-biao/Pictures/raw/master/Solr/solr%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0.png)
 
 ###### 查询
 
 solr网页客户端进行查询（查询所有，不过滤）
 
-![solr网页客户端搜索结果](https://gitee.com/zyy92/Pictures/raw/master/Solr/solr%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C.png)
+![solr网页客户端搜索结果](https://gitee.com/lao-biao/Pictures/raw/master/Solr/solr%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C.png)
 
 postman 模拟搜索
 
 - 请求url：http://localhost:8000/test/solr/1/5?keyword=solr
 - 请求方式：get
 
-![postman搜索添加文章结果](https://gitee.com/zyy92/Pictures/raw/master/Solr/postman%E6%90%9C%E7%B4%A2%E6%B7%BB%E5%8A%A0%E7%BB%93%E6%9E%9C.png)
+![postman搜索添加文章结果](https://gitee.com/lao-biao/Pictures/raw/master/Solr/postman%E6%90%9C%E7%B4%A2%E6%B7%BB%E5%8A%A0%E7%BB%93%E6%9E%9C.png)
 
 ###### 修改
 
@@ -357,11 +357,11 @@ postman
 - 请求url：http://localhost:8000/test/solr
 - 请求方式：put
 
-![solr文章g更新](https://gitee.com/zyy92/Pictures/raw/master/Solr/solr%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0.png)
+![solr文章g更新](https://gitee.com/lao-biao/Pictures/raw/master/Solr/solr%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0.png)
 
 solr客户端查看更新结果
 
-![solr客户端查看更新结果](https://gitee.com/zyy92/Pictures/raw/master/Solr/solr%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E7%BB%93%E6%9E%9C.png)
+![solr客户端查看更新结果](https://gitee.com/lao-biao/Pictures/raw/master/Solr/solr%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E7%BB%93%E6%9E%9C.png)
 
 ###### 删除
 
@@ -370,8 +370,8 @@ postman
 - 请求url：http://localhost:8000/test/solr
 - 请求方式：delete
 
-![solr删除文章](https://gitee.com/zyy92/Pictures/raw/master/Solr/solr%E6%96%87%E7%AB%A0%E5%88%A0%E9%99%A4.png)
+![solr删除文章](https://gitee.com/lao-biao/Pictures/raw/master/Solr/solr%E6%96%87%E7%AB%A0%E5%88%A0%E9%99%A4.png)
 
 solr客户端查看删除结果
 
-![solr客户端删除结果](https://gitee.com/zyy92/Pictures/raw/master/Solr/solr%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%A0%E9%99%A4%E7%BB%93%E6%9E%9C.png)
+![solr客户端删除结果](https://gitee.com/lao-biao/Pictures/raw/master/Solr/solr%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%A0%E9%99%A4%E7%BB%93%E6%9E%9C.png)
