@@ -1,7 +1,11 @@
 ---
 title: docker配置jdk8镜像
-tags: 'docker,java'
-categories: 'notes,后端'
+tags: 
+  - docker
+  - java
+categories: 
+  - notes
+  - 后端
 abbrlink: cc1858db
 date: 2020-08-19 13:17:38
 ---
@@ -16,10 +20,10 @@ date: 2020-08-19 13:17:38
 ###### docker仓库拉取jdk8镜像
 
 1. 拉取镜像
-    `docker pull openjdk:8.0.261` 
+    `docker pull openjdk:8-jre` 
 
 2. 运行jdk容器
-   `docker run -d -it --name jdk8 openjdk:8.0.261 /bin/bash `
+   `docker run -d -it --name jdk8 openjdk:8-jre` /bin/bash `
 
 3. 进入容器内部检查
    `docker exec -it myopenjdk /bin/bash`

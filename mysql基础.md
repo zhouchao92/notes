@@ -2,7 +2,6 @@
 title: mysql基础
 tags:
   - mysql
-  - 数据库
 categories:
   - notes
 abbrlink: 8e40d0ad

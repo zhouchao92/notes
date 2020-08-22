@@ -1,7 +1,6 @@
 ---
 title: android界面跳转
 tags:
-  - 界面跳转
 categories:
   - android
 abbrlink: de41b12e

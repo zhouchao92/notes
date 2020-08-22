@@ -1,7 +1,6 @@
 ---
 title: Android数据的存储
 tags:
-  - 数据存储
 categories:
   - android
 abbrlink: 56c6f16a

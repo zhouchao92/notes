@@ -1,9 +1,6 @@
 ---
 title: Java语法糖--自动装箱与拆箱、多异常并列和数值类型赋值优化
 tags:
-  - 自动装箱与拆箱
-  - 多异常并列
-  - 数值类型赋值优化
 categories:
   - notes
   - java

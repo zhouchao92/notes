@@ -1,8 +1,6 @@
 ---
 title: Java语法糖--var类型和switch
 tags:
-  - var
-  - switch
 categories:
   - notes
   - java

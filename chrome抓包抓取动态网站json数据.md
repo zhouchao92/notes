@@ -2,7 +2,6 @@
 title: chrome抓包抓取动态网站json数据
 tags:
   - json
-  - chrome抓包
 categories:
   - python
 abbrlink: aea01abd
@@ -17,6 +16,8 @@ date: 2020-04-03 12:00:00
 	- 查看request url即为真实请求的url
 	- url即为json数据
 - 使用json库下的loads函数将数据的类型转换成字典类型
+
+<!--more-->
 
 #### 实例代码
 举例：抓取百度搜索关键字--电影 的网站

@@ -88,7 +88,7 @@ http://虚拟机IP地址:8983/solr/#/
    ```shell
    $ docker exec -it --user=root solr /bin/bash	# 以管理员身份进入 solr 容器内部
    
-   # cp -r server/solr/configsets/_default/conf /var/solr/data/my_core  # 拷贝默认配置文件到 my_core 中
+   # cp -r server/solr/configsets/_default/conf/. /var/solr/data/my_core/conf  # 拷贝默认配置文件到 my_core 中
    # exit # 退出 solr 容器
    
    $ docker restart solr # 重启 solr 容器
@@ -105,7 +105,7 @@ http://虚拟机IP地址:8983/solr/#/
 1. 将中文解析器相关 jar 包拷贝到容器内
 
    ```shell
-   $ docker cp ik-analyzer-8.3.0.jar solr:/opt/solr-8.6.1/server/solr-webapp/webapp/WEB-INF/lib
+   $ docker cp ik-analyzer-8.3.0.jar solr:/opt/solr/server/solr-webapp/webapp/WEB-INF/lib
    ```
 
 2. 将中文解析器`ik-analyzer-solr-8.3.0\src\main\resources`目录下的文件拷贝到容器内
@@ -121,7 +121,7 @@ http://虚拟机IP地址:8983/solr/#/
    ```
 
    ```shell
-   $ docker cp classes solr:/opt/solr-8.6.1/server/solr-webapp/webapp/WEB-INF/classes
+   $ docker cp classes solr:/opt/solr/server/solr-webapp/webapp/WEB-INF/classes
    ```
 
 3. 配置中文解析器
@@ -150,11 +150,11 @@ http://虚拟机IP地址:8983/solr/#/
    ```shell
    $ docker exec -it --user=root solr /bin/bash
    
-   # cd /opt/solr-8.6.1/server/solr-webapp/webapp/WEB-INF/classes
+   # cd /opt/solr/server/solr-webapp/webapp/WEB-INF/classes
    # ls
    IKAnalyzer.cfg.xml  dynamicdic.txt  ext.dic  ik.conf  stopword.dic
    
-   # cd /opt/solr-8.6.1/server/solr-webapp/webapp/WEB-INF/lib
+   # cd /opt/solr/server/solr-webapp/webapp/WEB-INF/lib
    # ls
    ik-analyzer-8.3.0.jar ...
    ```
@@ -171,11 +171,11 @@ http://虚拟机IP地址:8983/solr/#/
 
 ![docker-solr中文分词器演示](https://gitee.com/lao-biao/Pictures/raw/master/Solr/docker-solr%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8%E6%BC%94%E7%A4%BA.png)
 
-###### solr挂载到虚拟机本地，实现数据持久化
+###### solr挂载到虚拟机本地，实现配置持久化
 
-在重启虚拟机后， my_core 失效，需要通过配置 solr 持久化数据。
+在重启虚拟机后，需要通过配置 solr 持久化数据。
 
-1. 创建数据存储的文件夹 存储在 `/mydata/solr/` 下
+1. 将配置的文件夹存储在 `/mydata/solr/` 下
 
    ```shell
    $ mkdir -p /mydata/
@@ -234,3 +234,70 @@ http://虚拟机IP地址:8983/solr/#/
    ```
 
 ![solr挂载到本地使用中文分词器示例](https://gitee.com/lao-biao/Pictures/raw/master/Solr/solr%E6%8C%82%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8%E7%A4%BA%E4%BE%8B.png)
+
+###### 挂载注意项【可选项】
+
+solr 容器创建的 core 数据保存在 `/var/solr/data` 目录下，所以需要将此目录挂载到 `/mydata/solr/server/solr` 目录下。在容器创建完成前可以添加 `-v /mydata/solr/server/solr:/var/solr/data`进行挂载，在创建容器后可通过修改配置文件的方式挂载。
+
+<font color="red">这种挂载方式，可能会出现问题，在用vagrant+vmbox配置的docke上没有问题，但在vmware上会出问题。所以还是推荐使用 docker cp 手动复制。</font>
+
+具体步骤：
+
+1. 查看 solr 容器的 id
+
+   ```shell
+   $ docker ps # 或使用 docker ps -a 查看所有容器
+   
+   CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
+   c713163b6615        solr                "docker-entrypoint.s…"   21 hours ago        Up 18 seconds       0.0.0.0:8983->8983/tcp              solr
+   ```
+
+2.  停止 docker，修改容器配置文件
+
+   ```shell
+   $ sudo systemctl stop docker
+   # 建议使用管理员权限
+   [root@localhost docker]# cd /var/lib/docker
+   [root@localhost docker]# cd containers
+   [root@localhost containers]# ls
+   c713163b66152a96bb7da98facd01f558550e4c3c70868cf8f65db9c7a89a014		# solr容器的id
+   [root@localhost containers]# cd c713163b66152a96bb7da98facd01f558550e4c3c70868cf8f65db9c7a89a014/
+   [root@localhost c713163b66152a96bb7da98facd01f558550e4c3c70868cf8f65db9c7a89a014]# ls
+   c713163b66152a96bb7da98facd01f558550e4c3c70868cf8f65db9c7a89a014-json.log  hosts
+   checkpoints                                                                mounts
+   config.v2.json                                                             resolv.conf
+   hostconfig.json                                                            resolv.conf.hash
+   hostname
+   [root@localhost c713163b66152a96bb7da98facd01f558550e4c3c70868cf8f65db9c7a89a014]# vi mount
+   ```
+
+   在 `BInds` 中添加挂载的目录内容
+
+   ```json
+   {
+   	"Binds": ["/mydata/solr:/opt/solr","/mydata/solr/server/solr:/var/solr/data"],
+       ...
+   }
+   ```
+
+3.  重启 docker 服务，启动 solr 容器
+
+   ```shell
+   $ sudo systemctl restart docker
+   $ docker start solr
+   ```
+
+4. 进入 solr 容器内部，检查挂载文件内容
+
+   ```shell
+   [root@localhost blog-java]# docker exec -it --user=root solr /bin/bash
+   root@c713163b6615:/opt/solr-8.6.1# cd /var/solr
+   root@c713163b6615:/var/solr# ls
+   data  log4j2.xml  logs
+   root@c713163b6615:/var/solr# cd data
+   root@c713163b6615:/var/solr/data# ls
+   blog_core  filestore  my_solr_core  solr.xml  userfiles  zoo.cfg
+   ```
+
+在完成挂载后，就不需要每次将 core 的数据手动拷贝到 /mydata/solr/server/solr 下。
+

@@ -1,7 +1,11 @@
 ---
 title: docker配置redis镜像
-tags: 'docker,redis'
-categories: 'notes,后端'
+tags: 
+  - docker
+  - redis
+categories: 
+  - notes
+  - 后端
 abbrlink: cf9a8130
 date: 2020-08-19 12:58:20
 ---
@@ -14,6 +18,8 @@ date: 2020-08-19 12:58:20
 ```shell
 $ docker pull redis[:版本号]
 ```
+
+<!--more-->
 
 ###### 创建redis容器与启动
 
