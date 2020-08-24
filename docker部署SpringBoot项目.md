@@ -191,12 +191,11 @@ blog                latest              05453583ff92        2 seconds ago       
    - `--name blog`容器名称为 blog
    - `--restart=always`容器自启动
    - `-p 9000:9000`端口映射
-   - `-v /mydata/blog:/usr/app/blog`图片资源目录挂载
-
+   - `-v /mydata/blog:/usr/app/blog/src`图片资源目录挂载
+- `-v /mydata/blog/logs:/usr/app/logs`日志目录挂载
+   
    ```shell
-   $ docker run -d --name blog --restart=always -p 9000:9000 \ 
-   -v /mydata/blog:/usr/app/blog \ 
-   blog 
+   $ docker run -d --name blog --restart=always -p 9000:9000 -v /mydata/blog/src:/usr/app/blog -v /mydata/blog/logs:/usr/app/logs blog
    b577dfcb31879743ee4bc05b54cc07ec864ba3ee4872924e91d7ca9609f37589
    ```
 

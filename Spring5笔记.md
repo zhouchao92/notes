@@ -29,7 +29,7 @@ date: 2020-06-27 22:55:36
 
 5、Spring5
 
-![SpringFramework](https://gitee.com/zyy92/Pictures/raw/master/Spring/SpringFrame.png)
+![SpringFramework](https://gitee.com/lao-biao/Pictures/raw/master/Spring/SpringFrame.png)
 
 <!--more-->
 
