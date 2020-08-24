@@ -19,10 +19,12 @@ AQS是基于先进先出队列（FIFO），CLH（一种基于**单向链表**的
 
 基于AQS实现的锁
 
-- ReentrantLock 可重入锁[悲观锁]
+- ReentrantLock 可重入锁[*悲观锁*]
 - Semaphore 信号量
-- CountDownLatch 倒数
+- CountDownLatch 倒数计数
 - ReentrantReadWriteLock 可重入读写锁
+
+<!--more-->
 
 ##### 偏向锁、轻量级锁、重量级锁
 
@@ -139,8 +141,6 @@ public class Mutex implements Lock, java.io.Serializable {
     }
 }
 ```
-
-<!--more-->
 
 ##### 多线程高并发常见问题引入
 

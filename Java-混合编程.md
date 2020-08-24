@@ -9,8 +9,6 @@ abbrlink: 6d00d2a2
 date: 2020-05-26 10:45:45
 ---
 
-#### Java混合编程
-
 ###### Java调用Java程序
 
 RMI
@@ -22,18 +20,14 @@ JNI Java Native Interface
 ###### Java调用JavaScript程序
 
 脚本引擎 Script Engine
-
 JDK8：Nashorn
-
 JDK6/7：Rhino
 
 ###### Java调用Python程序
 
 Jython（JPython）
 
-关键类
-
-PythonInterpreter
+关键类 PythonInterpreter
 
 - exec 执行语句
 - set 设置变量值
@@ -50,5 +44,4 @@ wsimport
 ###### Java调用命令行
 
 Runtime类
-
 Process类

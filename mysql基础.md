@@ -1,5 +1,5 @@
 ---
-title: mysql基础
+title: MySQL基础
 tags:
   - mysql
 categories:
@@ -8,11 +8,9 @@ abbrlink: 8e40d0ad
 date: 2020-04-03 12:00:00
 ---
 
-# MySQL语句
-
 ### 数据库的常用操作
 
-#### 登陆服务器
+#### 登录服务器
 `mysql -h服务器地址 -u用户名 -p密码`（不安全）  
 
 ```sql
@@ -24,7 +22,7 @@ mysql -hlocalhost(本地) -u... -p...
 mysql> exit
 ```
 
-相对安全的登陆形式
+相对安全的登录形式
 mysql -h服务器地址 -u用户名 -p(回车后输入密码)
 
 ```sql
@@ -746,7 +744,7 @@ mysql> select max(id),min(id) from demotable;
 +---------+---------+
 1 row in set (0.00 sec)
 ```
-### 分组 group by
+### 分组
 以某一个字段为组，相同的进行折叠  
 ```sql
 mysql> select * from demotable group by age;

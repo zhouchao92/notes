@@ -17,6 +17,8 @@ date: 2020-07-11 22:25:05
 
 Servlet运行于支持Java的应用服务器中。从原理上讲，Servlet可以响应任何类型的请求，绝大数情况下Servlet只用来扩展基于HTTP协议的Web服务器。
 
+<!--more-->
+
 ###### 特点
 
 - 运行在Java的应用服务器上
@@ -41,8 +43,6 @@ URI：虚拟项目名/servlet的别名
 2. 服务器根据请求URL地址中的URI信息在webapps目录下找到对应的项目文件夹
 3. 然后在web.xml中检索响应的Servlet
 4. 找到后调用并执行Servlet
-
-<!--more-->
 
 ##### Servlet的生命周期
 

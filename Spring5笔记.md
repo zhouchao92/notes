@@ -854,7 +854,7 @@ WebFlux是一种异步非阻塞的框架，异步非阻塞的框架只在Servlet
 - 都可以使用注解方式，运行在Tomcat等容器中
 - SpringMVC采用命令式编程，WebFlux采用异步响应式编程
 
-![WebFlux对比SpringMVC](https://gitee.com/zyy92/Pictures/raw/master/Spring/WebFlux对比SpringMVC.png)
+![WebFlux对比SpringMVC](https://gitee.com/lao-biao/Pictures/raw/master/Spring/WebFlux对比SpringMVC.png)
 
 ##### 响应式编程ReactiveProgramming
 

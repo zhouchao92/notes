@@ -31,6 +31,8 @@ for(Object object:Set){
 - `for-each`不能同时遍历2个或以上的集合
 - `for`和`for-each`性能接近
 
+<!--more-->
+
 ###### 枚举
 
 - 枚举变量：变量的取值只在一个有限的集合内

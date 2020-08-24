@@ -8,8 +8,11 @@ abbrlink: 18701caa
 date: 2020-07-14 23:03:22
 ---
 
-
 #### JVM基础
+
+JVM是Java Virtual Machine（Java虚拟机）的缩写，JVM是一种用于计算设备的规范，它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。
+
+<!--more-->
 
 ##### java从编码到执行
 
@@ -19,20 +22,20 @@ date: 2020-07-14 23:03:22
 
 ![从跨平台的语言到跨语言的平台](https://gitee.com/lao-biao/Pictures/raw/master/JVM/跨平台语言与跨语言平台.png)
 
-##### jvm
+##### JVM
 
 java虚拟机 java virtual machine 
 
-###### jvm是一种规范
+###### JVM是一种规范
 
 - java虚拟机规范 java virtual machine specifications
 
-###### jvm是虚构出来的一台计算机
+###### JVM是虚构出来的一台计算机
 
 - 字节码指令集（汇编语言）
 - 内存管理：栈 堆 方法区等
 
-###### jvm分代模型
+###### JVM分代模型
 
 - 新生代（Young Generation）
 - 老年代（(Old Generation）
@@ -40,9 +43,9 @@ java虚拟机 java virtual machine
 
 JDK 8 中已经把持久代（PermGen Space）移除了，取而代之的元空间（Metaspace）。Metaspace占用的是本地内存，不再占用虚拟机内存。
 
-##### jvm与class文件格式
+##### JVM与class文件格式
 
-jvm与java无关，任何语言都可以通过编译成字节码文件在jvm上运行。
+JVM与java无关，任何语言都可以通过编译成字节码文件在JVM上运行。
 
 ```mermaid
 graph LR;
@@ -85,13 +88,11 @@ Hotspot深度定制版
 
 JDK：开发集成工具+jre，java开发工具包，部署java开发环境
 
-JRE：核心库+jvm，运行java环境
+JRE：核心库+JVM，运行java环境
 
 JVM：运行最终的字节码文件
 
 ![JDK-JRE-JVM](https://gitee.com/lao-biao/Pictures/raw/master/JVM/JDK-JRE-JVM.png)
-
-<!--more-->
 
 #### Garbage Collector 与 GC tuning
 
@@ -431,7 +432,7 @@ OOM（Out Of Memory）：内存泄漏、内存溢出
 
 文档：[Arthas](https://alibaba.github.io/arthas/)
 
-Arthas无法替代jvm唯一的命令jmap
+Arthas无法替代JVM唯一的命令jmap
 
 ```shell
 top # 类似于任务管理器，通过此命令找到java程序运行的端口号

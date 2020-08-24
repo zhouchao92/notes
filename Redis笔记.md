@@ -22,6 +22,8 @@ Redis是一个基于key-value形式进行存储的内存型数据库
 - 定位：数据库软件
   - 作用：存储数据
 
+<!--more-->
+
 ##### NoSql数据库
 
 Redis是一个NoSql数据库。
@@ -55,8 +57,6 @@ Redis是一个NoSql数据库。
 缺点
 
 - 效率降低
-
-<!--more-->
 
 #### Redis安装
 

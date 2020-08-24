@@ -7,13 +7,15 @@ date: 2020-07-07 20:07:52
 categories:
 ---
 
-删除步骤
+###### 删除步骤
 
 1. 进入项目文件下，使用**Git Bash Here**（或cmd窗口）打开命令行窗口。
 2. `git pull`或(`git pull origin master`)从远程仓库里面的项目拉下来，`dir`（Windows系统）查看文件目录结构。
 3. 例如需要删除target文件夹，`git rm -f --cached target`
 4. `git commit -m "Delete target."`提交，添加操作说明。
 5. `git push`或(`git push -u origin master`)将本次更改推送到远程仓库。
+
+<!--more-->
 
 ```shel
 $ git pull origin master

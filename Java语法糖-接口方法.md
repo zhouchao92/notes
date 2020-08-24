@@ -1,7 +1,7 @@
 ---
 title: Java语法糖--接口方法
 tags:
-  - 接口方法
+  - interface
 categories:
   - notes
   - java
@@ -16,6 +16,7 @@ date: 2020-04-20 11:52:31
 Java最初的设计中，接口的方法都是没有实现的、公开的
 
 Java 8推出接口的默认方法/静态方法(都带有实现的)，为Lambda表达式提供支持
+<!--more-->
 
 ```java
 public interface Animal {

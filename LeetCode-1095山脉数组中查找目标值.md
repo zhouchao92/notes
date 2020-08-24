@@ -4,7 +4,6 @@ categories:
   - leetcode
 abbrlink: 8d630654
 date: 2020-04-29 20:17:43
-mathjax: true
 ---
 
 ###### 山脉数组中查找目标值
