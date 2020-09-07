@@ -1,7 +1,6 @@
 ---
 title: android动态权限申请
 tags:
-  - 动态权限
 categories:
   - android
 abbrlink: 821fe050

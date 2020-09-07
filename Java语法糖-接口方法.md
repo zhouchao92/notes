@@ -1,7 +1,6 @@
 ---
 title: Java语法糖--接口方法
 tags:
-  - interface
 categories:
   - notes
   - java

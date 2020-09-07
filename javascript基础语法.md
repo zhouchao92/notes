@@ -4,7 +4,7 @@ tags:
   - javascript
 categories:
   - notes
-  - web
+  - 前端
 abbrlink: 95725add
 date: 2020-04-03 12:00:00
 ---
@@ -444,7 +444,7 @@ BOM的具体实现是window对象
    - 警告框     alert();           提示一个警告信息，无返回值
     - 确认框     confirm();     提示用户选择一项操作（确定/取消） 返回true或false
     - 提示框    prompt();      提示用户某个信息的录入    点击确定返回当前用户录入的数据，默认返回空字符串；点击取消，返回null
-    
+   
 3. 定时和间隔执行方法
 	- 定时
 	setTimeout(函数对象，时间(毫秒));    指定的时间后执行指定的函数
@@ -596,7 +596,7 @@ var obj=document.createElement("标签名");
 - 创建验证码
   
     - 创建随机四位数字
-        
+      
         ```js
         var code=Math.floor(Math.random()*9000+1000);
         ```
@@ -612,7 +612,7 @@ var obj=document.createElement("标签名");
      封装校验...相同的保留，不同的传参
      
      1. 获取用户名信息
-         
+        
          ```js
          var uname=document.getElementById("uname").value;
          ```

@@ -1,8 +1,6 @@
 ---
 title: Java语法糖--不定项参数和静态导入
 tags:
-  - 不定项参数
-  - 静态导入
 categories:
   - notes
   - java

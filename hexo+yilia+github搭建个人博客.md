@@ -1,7 +1,6 @@
 ---
 title: hexo+yilia+github搭建个人博客
 tags: 
-  - 个人博客
 categories:
   - hexo
 abbrlink: 73e911cd

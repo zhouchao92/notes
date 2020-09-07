@@ -1,7 +1,6 @@
 ---
 title: Android自定义工具类--logutils
 tags:
-  - log
 categories:
   - android
 abbrlink: c3843c50

@@ -2,7 +2,7 @@
 title: Java语法糖--try-with-resource和ResourceBundle文件加载
 tags:
   - try-with-resource
-  - Resource Bundle
+  - resource bundle
 categories:
   - notes
   - java

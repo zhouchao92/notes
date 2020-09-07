@@ -1,7 +1,6 @@
 ---
 title: Android自定义工具类--toast utils
 tags:
-  - toast
 categories:
   - android
 abbrlink: 34a9fe48

@@ -1,8 +1,6 @@
 ---
 title: Java语法糖for-each和枚举
 tags:
-  - for-each
-  - 枚举
 categories:
   - notes
   - java

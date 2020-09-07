@@ -193,7 +193,7 @@ blog                latest              05453583ff92        2 seconds ago       
    - `-p 9000:9000`端口映射
    - `-v /mydata/blog:/usr/app/blog/src`图片资源目录挂载
 - `-v /mydata/blog/logs:/usr/app/logs`日志目录挂载
-   
+  
    ```shell
    $ docker run -d --name blog --restart=always -p 9000:9000 -v /mydata/blog/src:/usr/app/blog -v /mydata/blog/logs:/usr/app/logs blog
    b577dfcb31879743ee4bc05b54cc07ec864ba3ee4872924e91d7ca9609f37589
@@ -216,9 +216,7 @@ blog                latest              05453583ff92        2 seconds ago       
 <font color="red">容器反复重启</font>，可能是后端代码问题，先移除当前容器，创建新容器，以控制台形式执行，输出 log ，用于查询错误。
 
 ```shell
-$ docker run -i --name blog  -p 9000:9000 \ 
--v /mydata/blog:/usr/app/blog \ 
-blog
+$ docker run -i --name blog  -p 9000:9000 -v /mydata/blog:/usr/app/blog blog
 ```
 
 ###### 用户登录成功响应中没有生成 cookie

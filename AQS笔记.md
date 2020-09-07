@@ -1,7 +1,7 @@
 ---
 title: AQS笔记
 tags:
-  - AQS
+  - aqs
   - 并发编程
 categories:
   - notes

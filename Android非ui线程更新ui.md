@@ -1,7 +1,6 @@
 ---
 title: Android非ui线程更新ui
 tags:
-  - ui
 categories:
   - android
 abbrlink: 89935aa5

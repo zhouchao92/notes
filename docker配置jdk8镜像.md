@@ -2,7 +2,6 @@
 title: docker配置jdk8镜像
 tags: 
   - docker
-  - java
 categories: 
   - notes
   - 后端
