@@ -12,6 +12,8 @@ tags:
 
 ![GOF23种设计模式](https://gitee.com/lao-biao/Pictures/raw/master/DesignPattern/GOF23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.png)
 
+<!--more-->
+
 #### 创建型模式
 
 - 单例模式
