@@ -291,7 +291,7 @@ public void paramAjax(@RequestBody List<User> userList) {
 
 ##### 获取Restful风格的参数
 
-Restful是一种架构风格、设计风格，而不是标准，只是提供了一组设计原则和约束条件。主要用于客户端和服务器交互的软件，基于这个歌风格设计的软件更简洁，更有层次，更易于实现缓存机制。
+Restful是一种架构风格、设计风格，而不是标准，只是提供了一组设计原则和约束条件。主要用于客户端和服务器交互的软件，基于这个风格设计的软件更简洁，更有层次，更易于实现缓存机制。
 
 Restful风格的请求是使用"url+请求方式"表示一次请求的目的，HTTP协议里面四个表示操作方式
 
@@ -300,7 +300,7 @@ Restful风格的请求是使用"url+请求方式"表示一次请求的目的，H
 - PUT：用于更新资源
 - DELETE：用于删除资源
 
-SpringMVC中使用占位符进行参数绑定，地址/user/1可以携程/user/{id}，占位符{id}对应的就是1的值，在业务方法中可以使用@PathVariable注解进行占位符的匹配获取。
+SpringMVC中使用占位符进行参数绑定，地址`/user/1`可以写成`/user/{id}`，占位符`{id}`对应的就是`1`的值，在业务方法中可以使用@PathVariable注解进行占位符的匹配获取。
 
 ##### 自定义类型转换器
 
@@ -482,22 +482,23 @@ SpringMVC的拦截器类似于Servlet开发中的过滤器Filter，用于对处�
 2. 配置拦截器
 3. 测试拦截器的拦截效果
 
-`HandlerInterceptor`接口源码
-
-```java
-public interface HandlerInterceptor {
-    // 执行于目标方法之前
-    default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        return true;	// true表示放行，false表示不放行
-    }
-	// 执行于目标方法之后，视图对象返回之前
-    default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
-    }
-	// 执行于视图对象返回之后
-    default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
-    }
-}
-```
+> `HandlerInterceptor`接口源码
+>
+> ```java
+> public interface HandlerInterceptor {
+>     // 执行于目标方法之前
+>     default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+>         return true;	// true表示放行，false表示不放行
+>     }
+> 	// 执行于目标方法之后，视图对象返回之前
+>     default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
+>     }
+> 	// 执行于视图对象返回之后
+>     default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
+>     }
+> }
+> ```
+>
 
 在`spring-mvc.xml`中配置拦截器
 

@@ -378,34 +378,36 @@ mappers标签的作用是加载映射，加载方式
 
 ###### properties标签
 
-jdbc.properties文件
+> `jdbc.properties`文件
+>
+> ```properties
+> jdbc.driver=com.mysql.jdbc.Driver
+> jdbc.url=jdbc:mysql://localhost:3306/study
+> jdbc.username=root
+> jdbc.password=123456
+> ```
+>
 
-```properties
-jdbc.driver=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/study
-jdbc.username=root
-jdbc.password=123456
-```
-
-SqlMapConfig.xml文件
-
-```xml
-<!--引入外部properties配置文件-->
-<properties resource="jdbc.properties"/>
-
-<!--配置数据源环境-->
-<environments default="development">
-    <environment id="development">
-        <transactionManager type="JDBC"/>
-        <dataSource type="POOLED">          
-            <property name="driver" value="${jdbc.driver}"/>
-            <property name="url" value="${jdbc.url}"/>
-            <property name="username" value="${jdbc.username}"/>
-            <property name="password" value="${jdbc.password}"/>
-        </dataSource>
-    </environment>
-</environments>
-```
+> `SqlMapConfig.xml`文件
+>
+> ```xml
+> <!--引入外部properties配置文件-->
+> <properties resource="jdbc.properties"/>
+> 
+> <!--配置数据源环境-->
+> <environments default="development">
+>     <environment id="development">
+>         <transactionManager type="JDBC"/>
+>         <dataSource type="POOLED">          
+>             <property name="driver" value="${jdbc.driver}"/>
+>             <property name="url" value="${jdbc.url}"/>
+>             <property name="username" value="${jdbc.username}"/>
+>             <property name="password" value="${jdbc.password}"/>
+>         </dataSource>
+>     </environment>
+> </environments>
+> ```
+>
 
 ###### typeAliases标签
 
@@ -437,7 +439,7 @@ MyBatis框架已定义常用的类型别名
 
 ##### SqlSession工厂构建器SqlSessionFactoryBuilder
 
-常用API：SqlSessionFactoryBuilder().build(InputStream inputStream);
+常用API：`SqlSessionFactoryBuilder().build(InputStream inputStream);`
 通过加载MyBatis的核心文件的输入流的形式构建一个SqlSessionFactory对象。
 
 ```java
@@ -970,8 +972,8 @@ public class AnnotationTest {
 | :---------: | :----------------------------------------------------------: |
 |  @Results   | 代替的是标签\<resultMap>,该注解中可以使用单个@Result注解，也可以使用@Result结合。使用格式：@Results({@Result(),@Result()})或@Results(@Result()) |
 |   @Result   | 代替了\<id>标签和\<result>标签<br />@Result中属性介绍<br />column：数据库的列名<br />property：需要装配的属性名<br />one：需要使用的@One注解，@Result(one=@One()<br />many：需要使用的@Many注解，@Result(many=@Many()) |
-| @One一对多  | 代替了\<assocation>标签，是多表查询的关键，在注解中用来指定子查询返回单一对象。@One注解属性介绍<br />select：指定用来多表查询的sqlmapper<br />使用格式：@Result(column="",property="",one=@One(select="")) |
-| @Many多对一 | 代替了\<collection>标签，是多表查询的关键，在注解中用来指定子查询返回对象集合，使用格式：@Result(column="",property="",many=@Many(select="")) |
+| @One一对多  | 代替了`<assocation>`标签，是多表查询的关键，在注解中用来指定子查询返回单一对象。@One注解属性介绍<br />select：指定用来多表查询的sqlmapper<br />使用格式：@Result(column="",property="",one=@One(select="")) |
+| @Many多对一 | 代替了`<collection>`标签，是多表查询的关键，在注解中用来指定子查询返回对象集合，使用格式：@Result(column="",property="",many=@Many(select="")) |
 
 ###### 一对多查询
 

@@ -1,5 +1,5 @@
 ---
-title: Web技术复习笔记
+title: Web技术复习笔记大纲
 categories:
   - notes
   - 后端
@@ -183,9 +183,10 @@ XmlHttpRequest
 
   - 表单验证 
 
-    <submit value onclick="return check(this.from)"
-
-    \<form onsubmit="return check(this)"
+    ```html
+<submit value onclick="return check(this.from)"
+    <form onsubmit="return check(this)"
+    ```
 
 ##### HTTP协议
 

@@ -13,22 +13,23 @@ date: 2020-04-03 12:00:00
 #### 登录服务器
 `mysql -h服务器地址 -u用户名 -p密码`（不安全）  
 
-```sql
+```powershell
 mysql -hlocalhost(本地) -u... -p...
-```
-
-#### 退出服务器
-```sql
-mysql> exit
 ```
 
 相对安全的登录形式
 mysql -h服务器地址 -u用户名 -p(回车后输入密码)
 
-```sql
+```powershell
 mysql -hlocalhost -uroot -p
 Enter password:...
 ```
+#### 退出服务器
+
+```powershell
+mysql> exit
+```
+
 <!--more-->
 
 #### 查询所有数据库
@@ -547,7 +548,7 @@ Query OK, 1 row affected (0.01 sec)
 
 #### 查询表中的数据
 `select * from 数据表名;`
-<span id="data">
+<span id="data"></span>
 
 ```sql
 mysql> select  * from demotable;
@@ -563,8 +564,6 @@ mysql> select  * from demotable;
 +----------+------+--------+------+------+
 4 rows in set (0.00 sec)
 ```
-</span>
-
 #### 修改数据
 对数据进行更新
 `update 数据表名称 set 字段名称 = 值 条件 (where);` 
@@ -609,21 +608,21 @@ mysql> select * from demotable;
 ```
 ### 数据表中的数据的查询详细
 #### 条件
-- = 
-- <>
-- \>=
-- \<=
-- \>
-- \<
--  is null
--  is not null
-- and 
+- `= `  等于
+- `<>`  不等于
+- `>=`  大于等于
+- `<= ` 小于等于
+- `>`  大于
+- `<`  小于
+-  `is null`  空
+-  `is not null`  非空
+- `and`  且
 	- between ... and ... 在...与...之间，前面的要小于后面的
-- or
+- `or`  或
 	- 列名 in(值1,值2,...)
 	- 列名 = 值1 or 列名 = 值2 or ...
-- not 
-- like
+- `not`  非
+- `like` 
 
 #### select * from 数据表名称 [where 条件];
 ```sql
@@ -685,8 +684,8 @@ mysql> select username as "名字",age as "年龄" from demotable;
 #### 模糊查询
 `select * from 数据表名称 where 字段名称 like 关键字%`  
 
-- %表示通配符  
-- _表示占位符  
+- %表示通配符
+- _表示占位符
 ```sql
 mysql> select * from demotable where username like "zhang%";
 +----------+------+--------+------+-----+

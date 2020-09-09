@@ -10,7 +10,7 @@ abbrlink: 67c8035e
 date: 2020-09-07 15:58:03
 ---
 
-##### Spring Cloud
+##### Spring Cloud与Spring Cloud Alibaba
 
 Spring Cloud为开发人员提供了工具来快速构建分布式系统中的一些常见模式(例如配置管理、服务发现、断路器、智能路由、微代理、控制总线、一次性令牌、全局锁、领导选举、分布式会话、集群状态)。分布式系统的协调产生了模板模式，使用Spring Cloud开发人员可以快速建立实现这些模式的服务和应用程序。它们在任何分布式环境中都能很好地工作，包括开发者自己的笔记本电脑、裸机数据中心以及云计算等托管平台。
 
@@ -275,3 +275,86 @@ spring.cloud.nacos.config.extension-configs[2].refresh=true
 > ```
 
 <font color=red>注意：断言的 </font>`Path`<font color=red>作用域越大的放在后面，避免出现指定的断言的</font>`Path`<font color=red>不生效。</font>
+
+##### 文件存储
+
+Spring Cloud Alibaba-OSS
+
+###### 简介
+
+对象存储服务（Object Storage Service，OSS）是一种海量、安全、低成本、高可靠的云存储服务，适合存放任何类型的文件。容量和处理能力弹性扩展，多种存储类型供选择，全面优化存储成本。
+
+![阿里云对象存储-服务端签名后直传](https://gitee.com/lao-biao/Pictures/raw/master/%E5%90%8E%E7%AB%AF/%E9%98%BF%E9%87%8C%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%AD%BE%E5%90%8D%E5%90%8E%E7%9B%B4%E4%BC%A0.png)
+
+###### 阿里云 OSS 的文件上传功能
+
+1. 添加依赖
+
+   ```xml
+   <dependency>
+       <groupId>com.aliyun.oss</groupId>
+       <artifactId>aliyun-sdk-oss</artifactId>
+       <version>3.10.2</version>
+   </dependency>
+   ```
+
+2. 测试
+
+   ```java
+   // Endpoint以杭州为例，其它Region请按实际情况填写。
+   String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
+   // 云账号AccessKey有所有API访问权限，建议遵循阿里云安全最佳实践，创建并使用RAM子账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建。
+   String accessKeyId = "<yourAccessKeyId>";
+   String accessKeySecret = "<yourAccessKeySecret>";
+   
+   // 创建OSSClient实例。
+   OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
+   
+   // 上传文件流。
+   InputStream inputStream = new FileInputStream("<yourlocalFile>");
+   ossClient.putObject("<yourBucketName>", "<yourObjectName>", inputStream);
+   
+   // 关闭OSSClient。
+   ossClient.shutdown();
+   ```
+
+###### 通过Spring Boot对OSS进行管理
+
+1. 引入对象存储依赖
+
+   ```xml
+   <dependency>
+       <groupId>com.alibaba.cloud</groupId>
+       <artifactId>spring-cloud-starter-alicloud-oss</artifactId>
+       <version>2.2.0.RELEASE</version>
+   </dependency>
+   ```
+
+2. 配置相关信息
+
+   ```properties
+   // application.properties
+   alibaba.cloud.access-key=your-ak
+   alibaba.cloud.secret-key=your-sk
+   alibaba.cloud.oss.endpoint=***
+   ```
+
+3. 使用 OSSClient 进行相关操作
+
+   ```java
+   @Service
+   public class YourService {
+       @Autowired
+       private OSSClient ossClient;
+   
+       public void saveFile() {
+           // download file to local
+           ossClient.getObject(new GetObjectRequest(bucketName, objectName), new File("pathOfYourLocalFile"));
+       }
+   }
+   ```
+
+   
+
+
+

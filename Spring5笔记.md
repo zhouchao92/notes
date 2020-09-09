@@ -390,14 +390,13 @@ bean标签autowire属性
 引入外部属性文件配置数据库连接池
 
 - 创建外部属性文件，properties格式文件，写数据库信息
-  			
-
-  ```properties
+  
+```properties
   prop.driverClass=com.mysql.jdbc.Driver
   prop.url=jdbc:mysql://localhost:3306/study
   prop.userName=root
   prop.password=123456
-  ```
+```
 
 - 把外部properties属性文件引入到Spring配置文件
   引入context名称空间
@@ -428,7 +427,7 @@ Spring针对Bean管理中创建对象提供的注解
 - @Controller 	Web层
 - @Repository 	Dao层		
 
-以上四个注解功能时一样的，都可以用来创建bean实例
+以上四个注解功能是一样的，都可以用来创建bean实例
 
 ##### 基于注解方式实现对象创建
 
@@ -618,7 +617,7 @@ JdbcTemplate：Spring框架对JDBC进行封装，使用JDBCTemplate方便实行�
 
 查询表里面有多少条记录，返回是某个值
 
-使用JdbcTemplate对象里面selectForObject(String sql,Class<T> requiredType)方法实现查询操作
+使用JdbcTemplate对象里面`selectForObject(String sql,Class<T> requiredType)`方法实现查询操作
 
 - 参数1：sql语句
 - 参数2：返回类型.class
@@ -743,7 +742,7 @@ JdbcTemplate实现批量操作batchUpdate(String sql,List<Object[]> batchArgs)
 
    1. 脏读：一个未提交事务读取到另一个未提交事务的数据
    2. 不可重复读：一个未提交的事务读取到另一提交事务修改的数据
-   3. 虚读：一个未提交事务读取到另一提交事务添加数据		
+   3. 虚读：一个未提交事务读取到另一提交事务添加数据
 
    | 隔离级别                    | 脏读 | 不可读 | 虚读 |
    | --------------------------- | ---- | ------ | ---- |
@@ -920,7 +919,7 @@ SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框�
 
   ```java
   public interface WebHandler {
-  			Mono<Void> handle(ServerWebExchange var1);
+      Mono<Void> handle(ServerWebExchange var1);
   }
   ```
 
@@ -931,7 +930,6 @@ SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框�
   - HandlerResultHandler：响应结果处理
 
 - SpringWebFlux实现函数式编程，两个接口：RouterFunction（路由处理）,HandlerFunction（处理函数）
-  	
 
 ##### SpringWebFlux（基于注解编程模型）
 
