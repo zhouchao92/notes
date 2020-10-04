@@ -878,7 +878,7 @@ Elasticsearcn 8.x 不在支持URL中的type参数。
   }
   ```
   
-  bank中数据有类型，在迁移时要指定其类型，在6.x之后废弃了type，迁移后的数据类型为_doc。
+  bank中数据有类型，在迁移时要指定其类型，在6.x之后废弃了 *type*，迁移后的数据类型为*_doc*。
 
 ###### 分词
 
@@ -892,9 +892,8 @@ Elasticsearcn 8.x 不在支持URL中的type参数。
 
 2. 创建自定义分词字典
    
-
-创建nginx容器，备份配置`/etc/nginx`到`/mydata`目录下，重命名配置为conf，并移动到mydata下，删除该容器，通过下列命令创建新的nginx容器。
-
+   创建nginx容器，备份配置`/etc/nginx`到`/mydata`目录下，重命名配置为conf，并移动到mydata下，删除该容器，通过下列命令创建新的nginx容器。
+   
    ```shell
    docker run -p 80:80 --name nginx \
    -v /mydata/nginx/html:/usr/share/nginx/html \
@@ -902,9 +901,9 @@ Elasticsearcn 8.x 不在支持URL中的type参数。
    -v /mydata/nginx/conf:/etc/nginx \
    -d nginx
    ```
-
+   
    在/mydata/nginx/html/es/目录下创建分词字典。
-
+   
    ```shell
    vi /mydata/nginx/html/es/fenci.txt
    ```
@@ -965,4 +964,5 @@ Elasticsearcn 8.x 不在支持URL中的type参数。
 3. 使用：参考官方文档 
 
    > https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.x/java-rest-high.html
-
+   
+   ![Elasticsearch的使用](https://gitee.com/lao-biao/Pictures/raw/master/elasticsearch/Elasticsearch%E7%9A%84%E4%BD%BF%E7%94%A8.png)
