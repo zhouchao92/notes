@@ -360,7 +360,7 @@ bean的后置处理器，bean生命周期的七步
 
 ##### 自动装配
 
-根据指定装配规则（属性名称或属性类型），Spring自动将配置的属性值进行注入
+根据指定装配规则（属性名称或属性类型），Spring自动将配置的属性值进行注入。
 
 bean标签autowire属性
 
@@ -391,12 +391,12 @@ bean标签autowire属性
 
 - 创建外部属性文件，properties格式文件，写数据库信息
   
-```properties
+  ```properties
   prop.driverClass=com.mysql.jdbc.Driver
   prop.url=jdbc:mysql://localhost:3306/study
   prop.userName=root
   prop.password=123456
-```
+  ```
 
 - 把外部properties属性文件引入到Spring配置文件
   引入context名称空间
@@ -528,20 +528,16 @@ AOP底层使用动态代理
 
 #### AOP（术语）	
 
-连接点：类里面可以被增强的方法
-
-切入点：实际被真正增强的方法
-
-通知（增强）：实际增强的逻辑部分
-通知有多种类型
-
-- 前置通知
-- 后置通知
-- 环绕通知
-- 异常通知
-- 最终通知	
-
-切面：把通知应用到切入点过程		
+- 连接点：类里面可以被增强的方法
+- 切入点：实际被真正增强的方法
+- 通知（增强）：实际增强的逻辑部分
+  通知有多种类型
+  - 前置通知
+  - 后置通知
+  - 环绕通知
+  - 异常通知
+  - 最终通知	
+- 切面：把通知应用到切入点过程		
 
 #### AOP操作（准备）		
 
@@ -551,53 +547,53 @@ AOP底层使用动态代理
    1. 基于xml配置文件实现
    2. 基于注解方式实现
 3. 在项目工程里面引入AOP相关依赖
-   cglib.jar
-   aopalliance.jar
-   weaver.jar
-   spring-aspects.jar
+   `cglib.jar`
+   `aopalliance.jar`
+   `weaver.jar`
+   `spring-aspects.jar`
 4. 切入点表达式
    切入点表达式作用：知道对哪个类里面的哪个方法进行增强
    语法结构：`exexcution([权限修饰符][返回类型][类全路径][方法名称]([参数列表]))`			
 
 #### AOP操作（AspectJ注解）	
 
-1. 创建类，在类里面定义方法
+1. 创建类，在类里面定义方法；
 2. 创建增强类（编写增强逻辑）
-   在增强类里面创建方法，让不同方法待变不同通知类型
+   在增强类里面创建方法，让不同方法待变不同通知类型；
 3. 进行通知的配置
-   1. 在Spring配置文件中，开启注解扫描
-   2. 使用注解创建User和UserProxy对象
-   3. 在增强类上面添加注解@Aspect
-   4. 在Spring配置文件中开启生成代理对象
+   1. 在Spring配置文件中，开启注解扫描；
+   2. 使用注解创建User和UserProxy对象；
+   3. 在增强类上面添加注解`@Aspect`；
+   4. 在Spring配置文件中开启生成代理对象；
 4. 配置不同类型的通知
-   在增强类里面，在作为通知方法上面添加通知类型注解，使用切入点表达式配置
-5. 相同切入点抽取
+   在增强类里面，在作为通知方法上面添加通知类型注解，使用切入点表达式配置。
+5. 相同切入点抽取；
 6. 有多个增强类中在同一个方法增强，设置增强类的优先级
-   在增强类上面添加注解@Order(数字类型值)，数字类型值越小优先级越高
+   在增强类上面添加注解`@Order`(数字类型值)，数字类型值越小优先级越高。
 
 #### AOP操作（AspectJ配置文件）	
 
-1. 创建两个类，增强类和被增强类，创建方法
-2. 在Spring配置文件中创建两个类对象
-3. 在Spring配置文件中配置切入点	
+1. 创建两个类，增强类和被增强类，创建方法；
+2. 在Spring配置文件中创建两个类对象；
+3. 在Spring配置文件中配置切入点。
 
 ### JdbcTemplate
 
 #### JdbcTemplate（概念和准备）
 
-JdbcTemplate：Spring框架对JDBC进行封装，使用JDBCTemplate方便实行数据库操作
+JdbcTemplate：Spring框架对JDBC进行封装，使用JDBCTemplate方便实行数据库操作。
 
 准备
 
 1. 引入相关jar包
-   druid
-   mysql-connector
-   spring-jdbc
-   spring-tx
-   spring-orm
-2. 在Spring配置文件配置数据库连接池
-3. 配置JdbcTemplate对象，注入DataSource
-4. 创建service类，创建dao类，在service中注入dao对象，在dao中注入JdbcTemplate对象
+   `druid`
+   `mysql-connector`
+   `spring-jdbc`
+   `spring-tx`
+   `spring-orm`
+2. 在Spring配置文件配置数据库连接池；
+3. 配置JdbcTemplate对象，注入DataSource；
+4. 创建service类，创建dao类，在service中注入dao对象，在dao中注入JdbcTemplate对象。
 
 #### JdbcTemplate操作数据库（添加）
 
@@ -611,7 +607,7 @@ JdbcTemplate：Spring框架对JDBC进行封装，使用JDBCTemplate方便实行�
 
 #### JdbcTemplate操作数据库（查询、修改、删除）
 
-调用JdbcTemplate对象里面update(String sql,Object.. args)方法
+调用JdbcTemplate对象里面`update(String sql,Object.. args)`方法
 
 ##### JdbcTemplate操作数据库（查询）
 
@@ -626,7 +622,7 @@ JdbcTemplate：Spring框架对JDBC进行封装，使用JDBCTemplate方便实行�
 
 查询表返回对象
 
-使用JdbcTemplate对象里面selectForObject(String sql,RowMapper<? extends Object> rowMapper,Object ..args )方法实现查询操作
+使用JdbcTemplate对象里面`selectForObject(String sql,RowMapper<? extends Object> rowMapper,Object ..args )`方法实现查询操作
 
 - 参数1：sql语句
 - 参数2：RowMapper,接口，返回不同的数据类型，使用这个接口的实现类完成数据封装
@@ -636,7 +632,7 @@ JdbcTemplate：Spring框架对JDBC进行封装，使用JDBCTemplate方便实行�
 
 查询表返回集合
 
-使用JdbcTemplate对象里面query(String sql,RowMapper<? extends Object> rowMapper,Object ..args )方法实现查询操作
+使用JdbcTemplate对象里面`query(String sql,RowMapper<? extends Object> rowMapper,Object ..args )`方法实现查询操作
 
 - 参数1：sql语句
 - 参数2：RowMapper,接口，返回不同的数据类型，使用这个接口的实现类完成数据封装
@@ -646,7 +642,7 @@ JdbcTemplate：Spring框架对JDBC进行封装，使用JDBCTemplate方便实行�
 
 批量操作：操作表里面多条记录
 
-JdbcTemplate实现批量操作batchUpdate(String sql,List<Object[]> batchArgs)
+JdbcTemplate实现批量操作`batchUpdate(String sql,List<Object[]> batchArgs)`
 
 - 参数1：sql语句
 - 参数2：List集合，添加多条记录数据
@@ -655,41 +651,40 @@ JdbcTemplate实现批量操作batchUpdate(String sql,List<Object[]> batchArgs)
 
 批量操作：操作表里面多条记录
 
-JdbcTemplate实现批量操作batchUpdate(String sql,List<Object[]> batchArgs)
+JdbcTemplate实现批量操作`batchUpdate(String sql,List<Object[]> batchArgs)`
 
 - 参数1：sql语句
 - 参数2：List集合，添加多条记录数据
 
 ### 事务
 
-事务是数据库操作最基本单元，逻辑上一组操作，要么都成功，如果一个失败所有操作都失败
+事务是数据库操作最基本单元，逻辑上一组操作，要么都成功，如果一个失败所有操作都失败。
 
 典型场景：银行转账
-	
 
 ##### 事务四个特性（ACID）
 
-- 原子性
-- 一致性
-- 隔离性
-- 持久性
+- 原子性：整个事务中的所有操作，要么全部完成，要么全部不完成，不可能停滞在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
+- 一致性：一个事务可以封装状态改变（除非它是一个只读的）。事务必须始终保持系统处于一致的状态，不管在任何给定的时间并发事务有多少。
+- 隔离性：隔离状态执行事务，使它们好像是系统在给定时间内执行的唯一操作。如果有两个事务，运行在相同的时间内，执行相同的功能，事务的隔离性将确保每一事务在系统中认为只有该事务在使用系统。这种属性有时称为串行化，为了防止事务操作间的混淆，必须串行化或序列化请求，使得在同一时间仅有一个请求用于同一数据。
+- 持久性：在事务完成以后，该事务对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。
 
 ###### 问题引入
 
-1. 创建数据库表，添加记录
+1. 创建数据库表，添加记录；
 2. 创建service，搭建dao，完成对象创建和注入关系
-   service注入dao，在dao注入JdbcTemplate，在JdbcTemplate注入DataSource
-3. 在dao创建两个方法，多钱和少钱，在service创建方法（转账的方法），调用dao中的两个方法
-4. 在执行过程中出现异常时，数据会出错
+   service注入dao，在dao注入JdbcTemplate，在JdbcTemplate注入DataSource；
+3. 在dao创建两个方法，多钱和少钱，在service创建方法（转账的方法），调用dao中的两个方法；
+4. 在执行过程中出现异常时，数据会出错。
 
-解决方法：使用事务
+解决方法：使用事务。
 
 ###### 事务操作过程
 
-1. 开启事务
-2. 进行业务操作
-3. 没有异常，提交事务
-4. 出现异常，事务回滚
+1. 开启事务；
+2. 进行业务操作；
+3. 没有异常，提交事务；
+4. 出现异常，事务回滚。
 
 ##### 事务操作（Spring事务管理介绍）
 
@@ -705,68 +700,60 @@ JdbcTemplate实现批量操作batchUpdate(String sql,List<Object[]> batchArgs)
 
 ##### 事务操作（注解声明式事务管理）		
 
-1. 在Spring配置文件配置事务管理器
+1. 在Spring配置文件配置事务管理器；
 
-2. 在Spring配置文件中，开启事务注解
+2. 在Spring配置文件中，开启事务注解；
 
    1. 在Spring配置文件中引入名称空间tx
    2. 开启事务注解
 
-3. 在Service类上面（或者Service类方法上面）添加事务注解
-
-   @Transactional
+3. 在Service类上面（或者Service类方法上面）添加事务注解`@Transactional`。
 
    - 类：所有的方法都添加事务
-   - 方法：只为当前方法添加事务
+- 方法：只为当前方法添加事务
 
 ##### 事务操作（注解声明式事务管理参数配置）
 
-1. 在Service类上面添加注解@Transactional，注解参数配置
-
+1. 在Service类上面添加注解@Transactional，注解参数配置；
 2. Propagation：事务传播行为
-   多事务方法（对数据库表数据进行变化的操作）进行调用
-
-   | 行为         |                             描述                             |
-   | ------------ | :----------------------------------------------------------: |
-   | REQUIRED     | 如果有事务在运行，当前的方法就在这个事务内运行，否则，就启动一个新的事务，并在自己的事务内运行 |
-   | REQUIRED_NEW | 当前的方法必须启动新事务，并在它自己的事务内运行，如果有事务正在运行，应该将它挂起 |
-   | SUPPORTS     | 如果有事务在运行，当前的方法就在这个事务内运行，否则它可以不运行在事务中 |
-   | NOT_SUPPORTS |   当前的方法不应该运行在事务中，如果有运行的事务，将它挂起   |
-   | MANDATORY    | 当前的方法必须运行在事物内部，如果没有正在运行的事务，就抛出异常 |
-   | NEVER        |  当前的方法不应该运行在事务中，如果有运行的事务，就抛出异常  |
-   | NESTED       | 如果有事务在运行，当前的方法就应该在这个事务的嵌套事务内运行，否则，就启动一个新的事务，并在它自己的事务内运行 |
-
+   多事务方法（对数据库表数据进行变化的操作）进行调用。
 3. Ioslation：事务隔离级别
-   事务有特性称为隔离性，多事务操作之间不会产生影响，不考虑隔离性产生很多问题
+   事务有特性称为隔离性，多事务操作之间不会产生影响，不考虑隔离性产生很多问题。
    读问题：脏读、不可重复读、虚（幻）读
-
-   1. 脏读：一个未提交事务读取到另一个未提交事务的数据
-   2. 不可重复读：一个未提交的事务读取到另一提交事务修改的数据
-   3. 虚读：一个未提交事务读取到另一提交事务添加数据
-
-   | 隔离级别                    | 脏读 | 不可读 | 虚读 |
-   | --------------------------- | ---- | ------ | ---- |
-   | READ_UNCOMMITED（读未提交） | 有   | 有     | 有   |
-   | READ_COMMITTED（读已提交）  | 无   | 有     | 有   |
-   | REPEATABLE_READ（可重复读） | 无   | 无     | 有   |
-   | SERIALIZABLE（串行化）      | 无   | 无     | 无   |
-
+   1. 脏读：一个未提交事务读取到另一个未提交事务的数据；
+   2. 不可重复读：一个未提交的事务读取到另一提交事务修改的数据；
+   3. 虚读：一个未提交事务读取到另一提交事务添加数据。
 4. TimeOut：超时时间
-
-   事务需要在一定时间内进行提交，如果不提交进行回滚
-   默认值是-1，设置时间以秒为单位进行计算
-
+   事务需要在一定时间内进行提交，如果不提交进行回滚；
+   默认值是-1，设置时间以秒为单位进行计算。
 5. ReadOnly：是否只读
-   读：查询操作，写：添加修改删除操作
+   读：查询操作，写：添加修改删除操作。
 
-   1. 默认值为false，表示可以查询，可以添加修改删除操作
-   2. 设置为true，表示只能查询
-
+   1. 默认值为false，表示可以查询，可以添加修改删除操作；
+   2. 设置为true，表示只能查询。
 6. RollbcakFor：回滚
-   设置出现哪些异常进行事务回滚
-
+   设置出现哪些异常进行事务回滚。
 7. NoRollbackFor：不回滚
-   设置出现哪些异常不进行事务回滚
+   设置出现哪些异常不进行事务回滚。
+
+
+| 行为         |                             描述                             |
+| ------------ | :----------------------------------------------------------: |
+| REQUIRED     | 如果有事务在运行，当前的方法就在这个事务内运行，否则，就启动一个新的事务，并在自己的事务内运行 |
+| REQUIRED_NEW | 当前的方法必须启动新事务，并在它自己的事务内运行，如果有事务正在运行，应该将它挂起 |
+| SUPPORTS     | 如果有事务在运行，当前的方法就在这个事务内运行，否则它可以不运行在事务中 |
+| NOT_SUPPORTS |   当前的方法不应该运行在事务中，如果有运行的事务，将它挂起   |
+| MANDATORY    | 当前的方法必须运行在事物内部，如果没有正在运行的事务，就抛出异常 |
+| NEVER        |  当前的方法不应该运行在事务中，如果有运行的事务，就抛出异常  |
+| NESTED       | 如果有事务在运行，当前的方法就应该在这个事务的嵌套事务内运行，否则，就启动一个新的事务，并在它自己的事务内运行 |
+
+
+| 隔离级别                    | 脏读 | 不可读 | 虚读 |
+| --------------------------- | ---- | ------ | ---- |
+| READ_UNCOMMITED（读未提交） | 有   | 有     | 有   |
+| READ_COMMITTED（读已提交）  | 无   | 有     | 有   |
+| REPEATABLE_READ（可重复读） | 无   | 无     | 有   |
+| SERIALIZABLE（串行化）      | 无   | 无     | 无   |
 
 ##### 事务操作（XML声明式事务管理）
 
@@ -778,27 +765,27 @@ JdbcTemplate实现批量操作batchUpdate(String sql,List<Object[]> batchArgs)
 
 ##### 事务操作（完全注解声明式事务管理）
 
-创建配置类，使用配置类代替
+创建配置类，使用配置类代替。
 
-### Spring5框架新特性
+### Spring5 框架新特性
 
-1. 整个Spring5框架的代码基于Java8，运行时兼容JDK9，许多不建议使用的类和方法在代码库中删除
+1. 整个Spring5框架的代码基于Java8，运行时兼容JDK9，许多不建议使用的类和方法在代码库中删除。
 
-2. Spring5框架自带了通用的日志封装
-   Spring5已经移除Log4jConfigListener，官方建议使用Log4j2
-   Spring5框架整合Log4j2
+2. Spring5框架自带了通用的日志封装；
+   Spring5已经移除Log4jConfigListener，官方建议使用Log4j2。
+   Spring5框架整合Log4j2。
 
    1. 引入jar包
-      log4j-api-2
-      log4j-core-2
-      log4j-slf4j-impl-2
-      slf4j-api
-   2. 创建log4j2.xml
+      `log4j-api-2`
+      `log4j-core-2`
+      `log4j-slf4j-impl-2`
+      `slf4j-api`
+   2. 创建`log4j2.xml`
 
-3. Spring5框架核心容器支持@Nullable注解
-   @Nullable注解可以用在方法、属性、参数上，表示方法返回值可以为空，属性值可以为空，参数值可以为空
+3. Spring5框架核心容器支持`@Nullable`注解
+   @Nullable注解可以用在方法、属性、参数上，表示方法返回值可以为空，属性值可以为空，参数值可以为空。
 
-4. Spring5核心容器支持函数式风格GenericApplicationContext
+4. Spring5核心容器支持函数式风格GenericApplicationContext。
    注册对象
 
 5. Spring5支持整合JUnit5
@@ -808,45 +795,44 @@ JdbcTemplate实现批量操作batchUpdate(String sql,List<Object[]> batchArgs)
      1. 引入Spring相关针对测试依赖
         spring-test
      2. 编写测试类
-        @RunWith(SpringJUnit4ClassRunner.class)
-        @ContextConfiguration("classpath:.xml")	
+        `@RunWith(SpringJUnit4ClassRunner.class)`
+        `@ContextConfiguration("classpath:.xml")`	
 
-     注意：@Test导入的包为import org.junit.Test;
+     <font color=red>注意：<code>@Test</code>导入的包为<code>import org.junit.Test;</code></font>
 
    - 整合JUnit5
 
      1. 引入JUnit的jar包
      2. 编写测试类
-        @ExtendWith(SpringExtension.class)
-        @ContextConfiguration("classpath:.xml")
+        `@ExtendWith(SpringExtension.class)`
+        `@ContextConfiguration("classpath:.xml")`
 
-     注意：@Test导入的包为import org.junit.jupiter.api.Test;
+     <font color=red>注意：<code>@Test</code>导入的包为<code>import org.junit.jupiter.api.Test;</code></font>
 
    - 使用复合注解
-     @SpringJUnitConfig(locations="classpath:.xml")	
+     `@SpringJUnitConfig(locations="classpath:.xml")`
 
 #### Spring5框架新功能
 
 ##### SpringWebFlux
 
-Spring5新添加的模块，用于web开发的，功能SpringMVC类似的，WebFlux使用当前比较流程响应式编程出现的框架
+Spring5新添加的模块，用于web开发的，功能SpringMVC类似的，WebFlux使用当前比较流程响应式编程出现的框架。
 
-传统web框架，例如SpringMVC，基于Servlet容器
+传统web框架，例如SpringMVC，基于Servlet容器。
 
-WebFlux是一种异步非阻塞的框架，异步非阻塞的框架只在Servlet3.1以后才支持，核心是基于Reactor的相关API实现的
-	
+WebFlux是一种异步非阻塞的框架，异步非阻塞的框架只在Servlet3.1以后才支持，核心是基于Reactor的相关API实现的。
 
 ###### 异步非阻塞
 
-异步与同步--调用者，调用者发送请求，对方回应后就去做其他事情--同步，不等待回应就去做其他事情--异步
+异步与同步--调用者，调用者发送请求，对方回应后就去做其他事情--*同步*，不等待回应就去做其他事情--*异步*。
 
-非阻塞与阻塞--被调用者，被调用者收到请求之后，收到请求任务之后才给出反馈--阻塞，收到请求后马上给出反馈再去做其他事情--非阻塞
+非阻塞与阻塞--被调用者，被调用者收到请求之后，收到请求任务之后才给出反馈--*阻塞*，收到请求后马上给出反馈再去做其他事情--*非阻塞*。
 
 ###### WebFlux特点
 
-非阻塞式：在有限资源下，提高系统吞吐量和伸缩性，以Reactor为基础实现响应式编程
+非阻塞式：在有限资源下，提高系统吞吐量和伸缩性，以Reactor为基础实现响应式编程。
 
-函数式编程：Spring5框架基于Java8，webFlux使用Java8函数式编程方式实现路由请求
+函数式编程：Spring5框架基于Java8，webFlux使用Java8函数式编程方式实现路由请求。
 
 比较SpringMVC
 
@@ -861,8 +847,8 @@ WebFlux是一种异步非阻塞的框架，异步非阻塞的框架只在Servlet
 
 Java8及其之前版本
 提供的观察者模式两个类Observer和Observable	--伪响应式编程
-		
-Flow：Publisher、Subscriber
+
+Flow：Publisher、Subscriber。
 
 ###### 响应式编程Reactor实现
 
@@ -873,10 +859,10 @@ Flow：Publisher、Subscriber
    1. Flux对象实现发布者，返回N个元素
    2. Mono实现发布者，返回0或1个元素
 
-3. Flux和Mono都是数据流的发布者，使用Flux和Mono都可以发出三种数据信号
+3. Flux和Mono都是数据流的发布者，使用Flux和Mono都可以发出三种数据信号。
    元素值、错误信号、完成信号
    错误信号和完成信号都代表终止信号，终止信号用于告诉订阅者数据流结束
-   错误信号终止数据流同时把错误信息传递给订阅者
+   错误信号终止数据流同时把错误信息传递给订阅者。
 
 4. 代码演示
    引入依赖
@@ -891,11 +877,11 @@ Flow：Publisher、Subscriber
 
 5. 三种信号特点
 
-   1. 错误信号和完成信号都是终止信号，不能共存
-   2. 如果没有发送任何元素值，而是直接发送错误信号或者完成信号，表示是空数据流
-   3. 如果没有错误信号，没有完成信号，表示是无限数据流
+   1. 错误信号和完成信号都是终止信号，不能共存；
+   2. 如果没有发送任何元素值，而是直接发送错误信号或者完成信号，表示是空数据流；
+   3. 如果没有错误信号，没有完成信号，表示是无限数据流。
 
-6. 调用just或者其他方法只是声明数据流，数据流并没有发出，只有进行订阅之后才会触发数据流，不订阅什么都不会发生的
+6. 调用just或者其他方法只是声明数据流，数据流并没有发出，只有进行订阅之后才会触发数据流，不订阅什么都不会发生的。
    subscribe()
 
 7. 操作符
@@ -907,7 +893,7 @@ Flow：Publisher、Subscriber
 
 ##### WebFlux执行流程和核心API
 
-SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框架，异步非阻塞的框架
+SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框架，异步非阻塞的框架。
 
 - Netty
 
@@ -925,15 +911,15 @@ SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框�
 
 - SpringWebFlux里面DispatchHandler，负责请求的处理
 
-  - HandlerMapping：请求查询到处理的方法
-  - HandlerAdapter：真正负责请求处理
-  - HandlerResultHandler：响应结果处理
+  - HandlerMapping：请求查询到处理的方法；
+  - HandlerAdapter：真正负责请求处理；
+  - HandlerResultHandler：响应结果处理。
 
-- SpringWebFlux实现函数式编程，两个接口：RouterFunction（路由处理）,HandlerFunction（处理函数）
+- SpringWebFlux实现函数式编程，两个接口：RouterFunction（路由处理）,HandlerFunction（处理函数）。
 
 ##### SpringWebFlux（基于注解编程模型）
 
-只需要把相关依赖配置到项目中，SpringBoot自动配置相关运行容器，默认情况下使用Netty容器
+只需要把相关依赖配置到项目中，SpringBoot自动配置相关运行容器，默认情况下使用Netty容器。
 
 举例：SpringBoot	2.2.1.RELEASE
 
@@ -946,31 +932,31 @@ SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框�
 
 配置启动端口号
 
-创建相关包和类service、controller
+创建相关包和类service、controller。
 
 说明：
 
 - SpringMVC方式实现，同步阻塞的方式，基于SpringMVC+Servlet+Tomcat
-- SpringWebFlux方式实现，异步非阻塞方式，基于SpringWebFlux+Reactor+Netty
+- SpringWebFlux方式实现，异步非阻塞方式，基于SpringWebFlux+Reactor+Netty。
 
 ##### SpringWebFlux（基于函数式编程模型）
 
-- 在使用函数式编程模型操作时，需要自己初始化服务器
+- 在使用函数式编程模型操作时，需要自己初始化服务器。
 
 - 基于函数式编程模型，两个核心接口：
 
-  - RouterFunction：实现路由功能，请求转发给对应的handler
-  - HandlerFunction：处理请求生成响应的函数
+  - RouterFunction：实现路由功能，请求转发给对应的handler；
+  - HandlerFunction：处理请求生成响应的函数。
 
-  核心任务定义两个函数式接口的实现并且启动需要的服务器
+  核心任务定义两个函数式接口的实现并且启动需要的服务器；
 
-- SpringWebFlux请求和响应不再是ServletRequest和ServletResponse，而是ServerRequest和ServerResponose
+- SpringWebFlux请求和响应不再是ServletRequest和ServletResponse，而是ServerRequest和ServerResponose。
 
 ##### 具体流程
 
-1. 配置项目
-2. 创建相关包和类service
-3. 创建Handler
-4. 初始化服务器，编写Router
-5. 创建服务器完成适配
-6. 普通调用或使用WebClient调用
+1. 配置项目；
+2. 创建相关包和类service；
+3. 创建Handler；
+4. 初始化服务器，编写Router;
+5. 创建服务器完成适配；
+6. 普通调用或使用WebClient调用。
