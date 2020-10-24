@@ -11,6 +11,8 @@ date: 2020-06-30 14:52:53
 
 #### MyBatis简介
 
+MyBatis 是一款优秀的持久层框架，它支持自定义 SQL、存储过程以及高级映射。MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。
+
 ##### 原始jdbc操作
 
 原始jdbc开发存在的问题：
@@ -168,19 +170,39 @@ public class MyBatisTest {
 
 #### MyBatis映射文件概述
 
-`<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">`映射文件DTD约束头
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userMapper">
+    <select id="query" resultType="com.study.domain.User">
+        select * from user
+    </select>
+</mapper>
+```
+
+映射文件DTD约束头
+
+```xml
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+```
 
 `<mapper></mapper>`根标签
 
 `namespace="userMapper"`命名空间，与下面语句的id组成查询的标识
 
-`<select></select>`查询操作，可选的还有`insert`、`update`、`delete`
+`<select></select>`查询操作，可选的还有`insert`、`update`、`delete`标签
 
 ` id="query"`语句的id标识，与上面的命令空间组成查询的标识
 
 `resultType="com.study.domain.User"`查询结果对应的实体类型
 
 `select * from user`要执行的sql语句
+
+##### namespace命名空间
+
+命名空间的作用有两个，一个是利用更长的全限定名来将不同的语句隔离开来，同时也实现了你上面见到的接口绑定。就算你觉得暂时用不到==接口绑定==，你也应该遵循这里的规定，以防哪天你改变了主意。 长远来看，只要将命名空间置于合适的 Java 包命名空间之中，你的代码会变得更加整洁，也有利于你更方便地使用 MyBatis。
 
 #### MyBatis增删改查操作
 
@@ -350,7 +372,7 @@ configuration配置
             <!--用户名-->
             <property name="username" value="root"/> 
             <!--密码-->
-            <property name="password" value="123456"/>  
+            <property name="password" value="root"/>  
         </dataSource>
     </environment>
 </environments>
@@ -363,18 +385,18 @@ configuration配置
 
 数据源（datasource）类型有三种
 
-- UNPOOLED：这种数据源实现只是每次被请求时打开和关闭连接
-- POOLED：这种数据源的实现利用“池”的概念将JDBC连接对象组织起来
+- UNPOOLED：这种数据源实现只是每次被请求时打开和关闭连接。
+- POOLED：这种数据源的实现利用==“池”==的概念将JDBC连接对象组织起来。
 - JNDI：这种数据源的实现是为了能在如EJB或应用服务器这类容器中使用，容器可以集中或在外部配置数据源，然后在放置一个JNDI上下文的引用。
 
 ###### mappers标签
 
 mappers标签的作用是加载映射，加载方式
 
-- 使用相对类路径的资源引用，例如：`<mapper resource="org/mybtatis/builder/AuthorMapper.xml"/>`
-- 使用完全限定资源定位符（URL），例如：`<mapper ="file:///var/mappers/AuthorMapper.xml"/>`
-- 使用映射器接口实现类的完全限定类名，例如：`<mapper class="org.mybatis.builder.AuthorMapper"/>`
-- 将包内的映射器接口实现全部注册为映射器，例如：`package name="org.mybatis.builder"`
+- 使用相对类路径的资源引用，例如：`<mapper resource="org/mybtatis/builder/AuthorMapper.xml"/>`。
+- 使用完全限定资源定位符（URL），例如：`<mapper ="file:///var/mappers/AuthorMapper.xml"/>`。
+- 使用映射器接口实现类的完全限定类名，例如：`<mapper class="org.mybatis.builder.AuthorMapper"/>`。
+- 将包内的映射器接口实现全部注册为映射器，例如：`package name="org.mybatis.builder"`。
 
 ###### properties标签
 
@@ -384,7 +406,7 @@ mappers标签的作用是加载映射，加载方式
 > jdbc.driver=com.mysql.jdbc.Driver
 > jdbc.url=jdbc:mysql://localhost:3306/study
 > jdbc.username=root
-> jdbc.password=123456
+> jdbc.password=root
 > ```
 >
 
@@ -411,7 +433,7 @@ mappers标签的作用是加载映射，加载方式
 
 ###### typeAliases标签
 
-类型别名是为java类型设置别名，配置typeAliases为com.sutdy.domain.User定义为别名
+类型别名是为java类型设置别名，配置typeAliases为`com.sutdy.domain.User`定义为别名。
 
 ```xml
 <typeAliases>
@@ -427,13 +449,13 @@ mappers标签的作用是加载映射，加载方式
 
 MyBatis框架已定义常用的类型别名
 
-|  别名   | 数据类型 |
-| :-----: | :------: |
-| string  |  String  |
-|  long   |   Long   |
-|   int   | Integer  |
-| double  |  Double  |
-| boolean | Boolean  |
+|   别名    | 数据类型  |
+| :-------: | :-------: |
+| `string`  | `String`  |
+|  `long`   |  `Long`   |
+|   `int`   | `Integer` |
+| `double`  | `Double`  |
+| `boolean` | `Boolean` |
 
 #### MyBatis相应API
 
@@ -455,10 +477,10 @@ SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resou
 
 SqlSessionFactory有多个方法创建SqlSession实例，常用方法：
 
-|              方法               |                             解释                             |
-| :-----------------------------: | :----------------------------------------------------------: |
-|          openSession()          | 会默认开启一个事务，但事务不会自动提交，需要手动提交该事务，更新操作（增删改）才会持久化到数据库中 |
-| openSession(boolean autoCommit) | 参数为是否自动提交事务，如果设置为true，则不需要手动提交事务 |
+|               方法                |                             解释                             |
+| :-------------------------------: | :----------------------------------------------------------: |
+|          `openSession()`          | 会默认开启一个事务，但事务不会自动提交，需要手动提交该事务，更新操作（增、删、改）才会持久化到数据库中。 |
+| `openSession(boolean autoCommit)` | 参数为是否自动提交事务，如果设置为`true`，则不需要手动提交事务。 |
 
 ###### SqlSessionj会话对象
 
@@ -466,20 +488,16 @@ SqlSession实例，包含执行语句、提交、回滚事务和获取映射器�
 
 执行语句的方法
 
-```java
-<T> T selectOne(String statement, Object parameter);
-<E> List<E> selectList(String statement, Object parameter);
-int insert(String statement, Object parameter);
-int update(String statement, Object parameter);
-int delete(String statement, Object parameter);
-```
+- `<T> T selectOne(String statement, Object parameter);`
+- `<E> List<E> selectList(String statement, Object parameter);`
+- `int insert(String statement, Object parameter);`
+- `int update(String statement, Object parameter);`
+- `int delete(String statement, Object parameter);`
 
 操作事务的方法
 
-```java
-void commit(boolean paramter);
-void rollback();
-```
+- `void commit(boolean paramter);`
+- `void rollback();`
 
 #### MyBatis的Dao层实现
 
@@ -620,8 +638,8 @@ or多条件类型
            long time = resultSet.getLong(s);
            return new Date(time);
        }
-       
-   	// 数据库-->java
+   
+       // 数据库-->java
        public Date getNullableResult(ResultSet resultSet, int i) throws SQLException {
            long time = resultSet.getLong(i);
            return new Date(time);
@@ -704,7 +722,7 @@ logger.debug("是否是尾页：" + pageInfo.isIsLastPage());
 
 #### MyBatis多表操作
 
-```mysql
+```powershell
 mysql> select * from user_mb;
 +-----+-----------+----------+---------------+
 | uid | uname     | password | birthday      |
@@ -755,7 +773,7 @@ mysql> select * from user_role_mb;
 
 配置：`<resultMap>`
 
-映射方式一
+###### 映射方式一
 
 ```xml
 <mapper namespace="com.study.mapper.OrderMapper">
@@ -783,7 +801,7 @@ mysql> select * from user_role_mb;
 </mapper>
 ```
 
-映射方式二
+###### 映射方式二 - association
 
 ```xml
 <resultMap id="orderMap" type="order">
@@ -841,9 +859,9 @@ mysql> select * from user_role_mb;
 
 ##### 多对多查询
 
-用户表和角色表的关系为，一个用户有多个角色，一个角色被多个用户使用
+用户表和角色表的关系为，一个用户有多个角色，一个角色被多个用户使用。
 
-多对多查询的需求：查询用户同时查询出该用户的所有角色
+多对多查询的需求：查询用户同时查询出该用户的所有角色。
 
 配置：`<resultMap>+<collection>`
 
@@ -874,13 +892,13 @@ mysql> select * from user_role_mb;
 
 常用注解
 
-- @Insert：实现新增
-- @Update：实现删除
-- @Select：实现查询
-- @Result：实现结果集封装
-- @Results：可以与Result一起使用，封装多个结果集
-- @One：实现一对一结果集封装
-- @Many：实现一对多结果集封装
+- `@Insert`：实现新增
+- `@Update`：实现删除
+- `@Select`：实现查询
+- `@Result`：实现结果集封装
+- `@Results`：可以与Result一起使用，封装多个结果集
+- `@One`：实现一对一结果集封装
+- `@Many`：实现一对多结果集封装
 
 ##### 增删改查
 
@@ -968,12 +986,12 @@ public class AnnotationTest {
 
 ##### 复杂映射开发
 
-|    注解     |                             说明                             |
-| :---------: | :----------------------------------------------------------: |
-|  @Results   | 代替的是标签\<resultMap>,该注解中可以使用单个@Result注解，也可以使用@Result结合。使用格式：@Results({@Result(),@Result()})或@Results(@Result()) |
-|   @Result   | 代替了\<id>标签和\<result>标签<br />@Result中属性介绍<br />column：数据库的列名<br />property：需要装配的属性名<br />one：需要使用的@One注解，@Result(one=@One()<br />many：需要使用的@Many注解，@Result(many=@Many()) |
-| @One一对多  | 代替了`<assocation>`标签，是多表查询的关键，在注解中用来指定子查询返回单一对象。@One注解属性介绍<br />select：指定用来多表查询的sqlmapper<br />使用格式：@Result(column="",property="",one=@One(select="")) |
-| @Many多对一 | 代替了`<collection>`标签，是多表查询的关键，在注解中用来指定子查询返回对象集合，使用格式：@Result(column="",property="",many=@Many(select="")) |
+|     注解      |                             说明                             |
+| :-----------: | :----------------------------------------------------------: |
+|  `@Results`   | 代替的是标签\<resultMap>,该注解中可以使用单个@Result注解，也可以使用@Result结合。使用格式：@Results({@Result(),@Result()})或@Results(@Result()) |
+|   `@Result`   | 代替了\<id>标签和\<result>标签<br />@Result中属性介绍<br />column：数据库的列名<br />property：需要装配的属性名<br />one：需要使用的@One注解，@Result(one=@One()<br />many：需要使用的@Many注解，@Result(many=@Many()) |
+| `@One`一对多  | 代替了`<assocation>`标签，是多表查询的关键，在注解中用来指定子查询返回单一对象。@One注解属性介绍<br />select：指定用来多表查询的sqlmapper<br />使用格式：@Result(column="",property="",one=@One(select="")) |
+| `@Many`多对一 | 代替了`<collection>`标签，是多表查询的关键，在注解中用来指定子查询返回对象集合，使用格式：@Result(column="",property="",many=@Many(select="")) |
 
 ###### 一对多查询
 
