@@ -3,7 +3,6 @@ title: docker配置jdk8镜像
 tags: 
   - docker
 categories: 
-  - notes
   - 后端
 abbrlink: cc1858db
 date: 2020-08-19 13:17:38

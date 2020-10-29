@@ -4,7 +4,6 @@ tags:
   - docker
   - spring boot
 categories:
-  - notes
   - 后端
 abbrlink: a192e4a5
 date: 2020-08-21 21:22:40

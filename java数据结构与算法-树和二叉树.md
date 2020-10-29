@@ -3,8 +3,6 @@ title: java数据结构与算法--树和二叉树
 tags:
   - 二叉树
 categories:
-  - notes
-  - java
   - 数据结构与算法
 abbrlink: 49f58aa9
 date: 2020-04-10 21:30:09

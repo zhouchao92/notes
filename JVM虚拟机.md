@@ -2,7 +2,6 @@
 title: JVM虚拟机
 tags: jvm
 categories: 
-  - notes
   - java
 abbrlink: 18701caa
 date: 2020-07-14 23:03:22

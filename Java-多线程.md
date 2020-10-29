@@ -3,7 +3,6 @@ title: Java--多线程
 tags:
   - 多线程
 categories:
-  - notes
   - java
 abbrlink: '83776954'
 date: 2020-05-15 22:33:51

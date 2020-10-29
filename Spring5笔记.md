@@ -3,7 +3,6 @@ title: Spring5笔记
 tags:
   - spring
 categories:
-  - notes
   - 后端
 abbrlink: 70b6ad8d
 date: 2020-06-27 22:55:36
@@ -20,12 +19,12 @@ date: 2020-06-27 22:55:36
 
 4、Spring特点
 
-1. 方便解耦，简化开发
-2. Aop编程支持
-3. 方便程序测试
-4. 方便和其他框架进行整合
-5. 方便进行事务操作
-6. 降低API开发难度
+1. 方便解耦，简化开发；
+2. Aop编程支持；
+3. 方便程序测试；
+4. 方便和其他框架进行整合；
+5. 方便进行事务操作；
+6. 降低API开发难度。
 
 5、Spring5
 
@@ -114,7 +113,7 @@ Bean管理操作两种方式
 
 ##### 基于xml方式注入属性
 
-DI：依赖注入，注入属性
+DI（Dependency Injection）：依赖注入，注入属性
 
 ###### 第一种注入方式：使用set方法进行注入
 
@@ -142,10 +141,9 @@ DI：依赖注入，注入属性
    </bean>	
    ```
    
-3. p名称空间注入
-   使用p名称空间注入，可以简化基于xml注入方式
-
-4. 添加p名称空间在配置文件中`xmlns:p="http://www.springframework.org/schema/p"`
+3. p名称空间注入：使用p名称空间注入，可以简化基于xml注入方式。
+   
+4. 添加p名称空间在配置文件中 `xmlns:p="http://www.springframework.org/schema/p"`
 
 5. 进行属性注入，在bean标签里面进行操作
 
@@ -197,9 +195,7 @@ null值
 
 ##### 注入属性~内部bean
 
-一对多关系：部门和员工
-在实体类之间表示一对多关系
-在Spring配置文件中进行配置
+一对多关系：部门和员工，在实体类之间表示一对多关系，在Spring配置文件中进行配置：
 
 ```xml
 <bean id="emp" class="com.spring5.bean.Employee">
@@ -215,7 +211,7 @@ null值
 </bean>
 ```
 
-##### 注入属性~级联赋值	
+##### 注入属性~级联赋值
 
 ###### 方法一
 
@@ -238,7 +234,7 @@ null值
 
 ###### 方法二
 
-需要生成Employee类中Department属性的set方法
+需要生成Employee类中Department属性的set方法。
 
 ```xml
 <bean id="emp" class="com.spring5.bean.Employee">
@@ -259,13 +255,13 @@ null值
 
 #### IOC操作Bean管理（xml注入集合属性）
 
-- 注入数组类型属性
+- 注入数组类型属性；
 
-- 注入List集合类型属性
+- 注入List集合类型属性；
 
-- 注入Map集合类型属性
+- 注入Map集合类型属性；
 
-- 注入Set集合类型属性
+- 注入Set集合类型属性。
 
   ```xml
   <bean id="stu" class="com.spring5.Stu">
@@ -300,36 +296,37 @@ null值
   </bean>
   ```
 
-- 在集合里面设置对象类型值
+- 在集合里面设置对象类型值。
 
-- 把集合的注入部分提取出来
-  在Spring配置文件中引入名称空间util
-  使用util标签完成诸如部分的提取
+- 把集合的注入部分提取出来：在Spring配置文件中引入名称空间util，使用util标签完成诸如部分的提取。
 
 #### IOC操作Bean管理（FactoryBean）
 
 Spring有两种类型bean，一种是普通bean，另一种是工厂bean（FactoryBean）
-普通bean：在配置文件中定义bean类型就是返回类型
-工厂bean：在配置文件中定义bean类型可以和返回类型不一样	
 
-- 创建类，让这个类作为工厂bean，实现接口FactoryBean
-- 实现接口里面的方法，在实现的方法中定义返回的bean类型
+- 普通bean：在配置文件中定义bean类型就是返回类型；
+- 工厂bean：在配置文件中定义bean类型可以和返回类型不一样。
+  - 创建类，让这个类作为工厂bean，实现接口FactoryBean。
+  - 实现接口里面的方法，在实现的方法中定义返回的bean类型。
 
 #### IOC操作Bean管理（bean作用域）
 
-在Spring里面，设置创建bean实例是单实例还是多实例
-在Spring里面，默认情况下，bean是单实例对象
+==在Spring里面，设置创建bean实例是单实例还是多实例？==
 
-在Spring配置文件中bean标签里面有属性值（scope）用于设置单实例还是多实例
+在Spring里面，默认情况下，bean是单实例对象。
 
-> scope属性
-> 	singleton表示单实例[默认值]
-> 	prototype：表示多实例
-> singleton与prototype区别
-> 	singleton单实例，prototype多实例
-> 	设置scope值是singleton时，加载Spring配置文件时候就会创建单实例对象
-> 	设置scope值是prototype，不是在加载Spring配置文件时不会创建bean对象，在调用getBean()方法时创建多实例对象
-> request、session
+==在Spring配置文件中bean标签里面有属性值（scope）用于设置单实例还是多实例？==
+
+scope属性
+
+- singleton：表示单实例[默认值]
+- prototype：表示多实例。
+
+singleton与prototype区别
+
+- singleton单实例，prototype多实例
+- 设置scope值是singleton时，加载Spring配置文件时候就会创建单实例对象。
+- 设置scope值是prototype，不是在加载Spring配置文件时不会创建bean对象，在调用getBean()方法时创建多实例对象 request、session。
 
 #### IOC操作Bean管理（生命周期）
 
@@ -341,20 +338,19 @@ Spring有两种类型bean，一种是普通bean，另一种是工厂bean（Facto
 - 当容器关闭时，调用bean的销毁的方法（需要进行配置销毁的方法）
   bean标签destroy-method属性
 
-bean的后置处理器，bean生命周期的七步
+##### bean的后置处理器，bean生命周期的七步
 
-1. 通过构造器创建bean实例（无参构造）
-2. 为bean的属性设置值和其他bean引用（调用set方法）
-3. 把bean实例传递bean后置处理器的方法
-   postProcessBeforeInitialization(Object bean, String beanName)
-4. 调用bean的初始化的方法（需要进行配置初始化的方法）
-5. 把bean实例传递bean后置处理器的方法
-   postProcessAfterInitialization(Object bean, String beanName)
-6. bean可以使用（已获取对象）
-7. 当容器关闭时，调用bean的销毁的方法（需要进行配置销毁的方法）
+1. 通过构造器创建bean实例（无参构造）。
+2. 为bean的属性设置值和其他bean引用（调用set方法）。
+3. 把bean实例传递bean后置处理器的方法`postProcessBeforeInitialization(Object bean, String beanName)`。
+4. 调用bean的初始化的方法（需要进行配置初始化的方法）。
+5. 把bean实例传递bean后置处理器的方法`postProcessAfterInitialization(Object bean, String beanName)`。
+6. bean可以使用（已获取对象）。
+7. 当容器关闭时，调用bean的销毁的方法（需要进行配置销毁的方法）。
 
-后置处理器
-接口：BeanPostProcessor
+###### 后置处理器
+
+接口：`BeanPostProcessor`
 
 #### IOC操作Bean管理（xml自动装配）
 
@@ -364,51 +360,49 @@ bean的后置处理器，bean生命周期的七步
 
 bean标签autowire属性
 
-- byName根据属性名称注入，注入值bean的id值和类属性名称一样
-- byType根据属性类型注入		
+- byName 根据属性名称注入，注入值bean的id值和类属性名称一样。
+- byType 根据属性类型注入。
 
 ##### 自动装配过程
 
-根据属性名称自动注入
+- 根据属性名称自动注入；
 
-根据属性类型自动注入
+- 根据属性类型自动注入。
 
 #### IOC操作Bean管理（外部属性文件）
 
-直接配置数据库信息
-配置连接池--德鲁伊druid（Alibaba）
+直接配置数据库信息，配置连接池--德鲁伊druid（Alibaba）。
 
 ```xml
 <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-    <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-    <property name="url" value="jdbc:mysql://localhost:3306/study"></property>
-    <property name="username" value="root"></property>
-    <property name="password" value="123456"></property>
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/study"/>
+    <property name="username" value="root"/>
+    <property name="password" value="root"/>
 </bean>
 ```
 
-引入外部属性文件配置数据库连接池
+引入外部属性文件配置数据库连接池：
 
-- 创建外部属性文件，properties格式文件，写数据库信息
+- 创建外部属性文件，properties格式文件，写数据库信息。
   
   ```properties
   prop.driverClass=com.mysql.jdbc.Driver
   prop.url=jdbc:mysql://localhost:3306/study
   prop.userName=root
-  prop.password=123456
+  prop.password=root
   ```
 
-- 把外部properties属性文件引入到Spring配置文件
-  引入context名称空间
-
-  ```xml
+- 把外部properties属性文件引入到Spring配置文件，引入context名称空间。
+  
+```xml
   xmlns:context="http://www.springframework.org/schema/context"
   xsi:schemaLocation=”http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"
-  ```
+```
 
-  在Spring配置文件中使用标签  
+在Spring配置文件中使用标签
 
-  ```xml
+```xml
   <context:property-placeholder location="classpath:jdbc.properties"/>
   <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
       <property name="driverClassName" value="${prop.driverClass}"/>
@@ -416,28 +410,30 @@ bean标签autowire属性
       <property name="username" value="${prop.userName}"/>
       <property name="password" value="${prop.password}"/>
   </bean>
-  ```
+```
 
 #### IOC操作Bean管理（基于注解方式）
 
-Spring针对Bean管理中创建对象提供的注解
+Spring针对Bean管理中创建对象提供的注解：
 
-- @Component	
-- @Service	业务逻辑层
-- @Controller 	Web层
-- @Repository 	Dao层		
+- `@Component`
+- `@Service`：业务逻辑层
+- `@Controller`：Web层
+- `@Repository`：Dao层
 
-以上四个注解功能是一样的，都可以用来创建bean实例
+以上四个注解功能是一样的，都可以用来创建bean实例。
 
 ##### 基于注解方式实现对象创建
 
-1. 引入依赖	`spring-aop.jar`
+1. 引入依赖`spring-aop.jar`；
 
-2. 开启组件扫描
-   使用context命名空间
-   `<context:component-scan base-package=""/>`
-
-3. 创建类，在类上面添加相应的注解
+2. 开启组件扫描：使用context命名空间
+   
+   ```xml
+<context:component-scan base-package=""/>
+   ```
+   
+3. 创建类，在类上面添加相应的注解：
 
    ```xml
    use-default-filters="false" 不适用默认的filter
@@ -500,9 +496,9 @@ Spring针对Bean管理中创建对象提供的注解
 
 #### AOP（概念）
 
-面向切面编程，利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率
+面向切面编程，利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。
 
-不通过修改源代码方式，在主干功能里面添加新功能	
+不通过修改源代码方式，在主干功能里面添加新功能。
 
 登录--权限判断模块
 
@@ -514,7 +510,7 @@ AOP底层使用动态代理
 - 有接口情况，使用JDK动态代理
   创建接口实现类的代理对象，增强类的方法
 - 没有接口情况，使用CGLIB动态代理
-  创建当前类子类的代理对象，增强类的方法	
+  创建当前类子类的代理对象，增强类的方法
 
 ##### AOP（JDK动态代理）
 
@@ -714,7 +710,7 @@ JdbcTemplate实现批量操作`batchUpdate(String sql,List<Object[]> batchArgs)`
 
 ##### 事务操作（注解声明式事务管理参数配置）
 
-1. 在Service类上面添加注解@Transactional，注解参数配置；
+1. 在Service类上面添加注解`@Transactional`，注解参数配置；
 2. Propagation：事务传播行为
    多事务方法（对数据库表数据进行变化的操作）进行调用。
 3. Ioslation：事务隔离级别
@@ -812,9 +808,7 @@ JdbcTemplate实现批量操作`batchUpdate(String sql,List<Object[]> batchArgs)`
    - 使用复合注解
      `@SpringJUnitConfig(locations="classpath:.xml")`
 
-#### Spring5框架新功能
-
-##### SpringWebFlux
+#### SpringWebFlux
 
 Spring5新添加的模块，用于web开发的，功能SpringMVC类似的，WebFlux使用当前比较流程响应式编程出现的框架。
 
@@ -822,13 +816,13 @@ Spring5新添加的模块，用于web开发的，功能SpringMVC类似的，WebF
 
 WebFlux是一种异步非阻塞的框架，异步非阻塞的框架只在Servlet3.1以后才支持，核心是基于Reactor的相关API实现的。
 
-###### 异步非阻塞
+##### 异步非阻塞
 
 异步与同步--调用者，调用者发送请求，对方回应后就去做其他事情--*同步*，不等待回应就去做其他事情--*异步*。
 
 非阻塞与阻塞--被调用者，被调用者收到请求之后，收到请求任务之后才给出反馈--*阻塞*，收到请求后马上给出反馈再去做其他事情--*非阻塞*。
 
-###### WebFlux特点
+##### WebFlux特点
 
 非阻塞式：在有限资源下，提高系统吞吐量和伸缩性，以Reactor为基础实现响应式编程。
 
@@ -841,7 +835,7 @@ WebFlux是一种异步非阻塞的框架，异步非阻塞的框架只在Servlet
 
 ![WebFlux对比SpringMVC](https://gitee.com/lao-biao/Pictures/raw/master/Spring/WebFlux对比SpringMVC.png)
 
-##### 响应式编程ReactiveProgramming
+#### 响应式编程ReactiveProgramming
 
 响应式编程是一种面向数据流和变化传播的编程范式。这意味着可以在编程语言中很方便地表达静态或动态的数据流，而相关的计算模型会自动将变化的值通过数据流进行传播。
 
@@ -850,7 +844,7 @@ Java8及其之前版本
 
 Flow：Publisher、Subscriber。
 
-###### 响应式编程Reactor实现
+##### 响应式编程Reactor实现
 
 1. 响应式编程操作中，满足Reactive规范框架
 
@@ -891,7 +885,7 @@ Flow：Publisher、Subscriber。
    - flatMap 元素映射为流
      把每个元素转换成流，把转换后的多个流合成更大的流	
 
-##### WebFlux执行流程和核心API
+#### WebFlux执行流程和核心API
 
 SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框架，异步非阻塞的框架。
 
@@ -917,7 +911,7 @@ SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框�
 
 - SpringWebFlux实现函数式编程，两个接口：RouterFunction（路由处理）,HandlerFunction（处理函数）。
 
-##### SpringWebFlux（基于注解编程模型）
+#### SpringWebFlux（基于注解编程模型）
 
 只需要把相关依赖配置到项目中，SpringBoot自动配置相关运行容器，默认情况下使用Netty容器。
 
@@ -939,7 +933,7 @@ SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框�
 - SpringMVC方式实现，同步阻塞的方式，基于SpringMVC+Servlet+Tomcat
 - SpringWebFlux方式实现，异步非阻塞方式，基于SpringWebFlux+Reactor+Netty。
 
-##### SpringWebFlux（基于函数式编程模型）
+#### SpringWebFlux（基于函数式编程模型）
 
 - 在使用函数式编程模型操作时，需要自己初始化服务器。
 
@@ -952,7 +946,7 @@ SpringWebFlux基于Reactor，默认容器是Netty，Netty是高性能的NIO框�
 
 - SpringWebFlux请求和响应不再是ServletRequest和ServletResponse，而是ServerRequest和ServerResponose。
 
-##### 具体流程
+#### 具体流程
 
 1. 配置项目；
 2. 创建相关包和类service；

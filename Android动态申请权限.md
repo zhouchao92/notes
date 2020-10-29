@@ -7,7 +7,7 @@ abbrlink: 821fe050
 date: 2020-04-03 12:00:00
 ---
 
-#### Android 6.0以上动态申请权限  
+Android 6.0以上动态申请权限。
 
 ###### 添加相关权限
 
@@ -16,7 +16,7 @@ date: 2020-04-03 12:00:00
 ```java
 <uses-permission android:name="android.permission.××××"></uses-permission>
 ```
-###### 检查权限-动态申请权限-申请结果
+###### 流程
 
 - 检查权限
 - 动态申请权限

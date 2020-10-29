@@ -9,13 +9,13 @@ date: 2020-04-19 21:22:28
 
 ###### 前言
 
-Android项目中通常会使用log来进行调试，在发布版本后并不需要输出log，使用logutils类来控制log的输出管理
+Android项目中通常会使用log来进行调试，在发布版本后并不需要输出log，使用logutils类来控制log的输出管理。
 
 ###### 简介
 
-在应用调试阶段设置当前log等级大于或等于debug等级，即可输出debug，info，warming和error四个等级的log
+在应用调试阶段设置当前log等级大于或等于debug等级，即可输出debug，info，warming和error四个等级的log。
 
-在应用发布时只需要将当前log等级调整为0或小于0即可关闭log的输出
+在应用发布时只需要将当前log等级调整为0或小于0即可关闭log的输出。
 
 参数
 

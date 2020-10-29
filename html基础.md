@@ -3,7 +3,6 @@ title: html基础
 tags:
   - html
 categories:
-  - notes
   - 前端
 abbrlink: 1a147173
 date: 2020-04-03 12:00:00

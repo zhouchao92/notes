@@ -9,7 +9,7 @@ date: 2020-04-19 21:34:50
 
 ###### 前言
 
-在频繁调用Toast会造成较长的延时，不能及时显示最新的toast信息，使用ToastUtils解决延时bug
+在频繁调用Toast会造成较长的延时，不能及时显示最新的toast信息，使用ToastUtils解决延时bug。
 
 ###### 介绍
 

@@ -3,7 +3,6 @@ title: Java--AOP编程
 tags:
   - aop
 categories:
-  - notes
   - java
 abbrlink: d97d56d4
 date: 2020-06-04 15:44:45

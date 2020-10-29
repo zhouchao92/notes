@@ -1,10 +1,9 @@
 ---
 title: Java语法糖for-each和枚举
 tags:
-categories:
-  - notes
-  - java
   - 语法糖
+categories:
+  - java
 abbrlink: 6d197383
 date: 2020-04-19 22:56:58
 ---

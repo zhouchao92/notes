@@ -4,7 +4,6 @@ tags:
   - spring cloud
   - spring cloud alibaba
 categories:
-  - notes
   - 后端
 abbrlink: 67c8035e
 date: 2020-09-07 15:58:03

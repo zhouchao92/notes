@@ -3,7 +3,6 @@ title: Ajax笔记
 tags:
   - ajax
 categories:
-  - notes
   - 后端
 abbrlink: 48d9bd16
 date: 2020-07-12 10:47:12

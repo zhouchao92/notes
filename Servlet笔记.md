@@ -3,7 +3,6 @@ title: Servlet笔记
 tags:
   - servlet
 categories:
-  - notes
   - 后端
 abbrlink: bc07bc32
 date: 2020-07-11 22:25:05

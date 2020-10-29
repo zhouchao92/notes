@@ -1,11 +1,18 @@
 ---
 title: Web技术复习笔记大纲
 categories:
-  - notes
   - 后端
 abbrlink: 71c32ee5
 date: 2020-07-08 08:54:33
 tags:
+  - html
+  - css
+  - javascript
+  - http
+  - servlet
+  - jsp
+  - el
+  - jstl
 ---
 
 ##### C/S架构与B/S架构

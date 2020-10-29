@@ -1,10 +1,9 @@
 ---
 title: Java语法糖--不定项参数和静态导入
 tags:
-categories:
-  - notes
-  - java
   - 语法糖
+categories:
+  - java
 abbrlink: 689cf977
 date: 2020-04-20 10:07:53
 ---

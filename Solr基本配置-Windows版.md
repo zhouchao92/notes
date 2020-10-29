@@ -3,7 +3,6 @@ title: Solr基本配置-Windows版
 tags:
   - solr
 categories:
-  - notes
   - 后端
 abbrlink: e0b21c40
 date: 2020-08-18 10:32:26

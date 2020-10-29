@@ -4,7 +4,6 @@ tags:
   - docker
   - redis
 categories: 
-  - notes
   - 后端
 abbrlink: cf9a8130
 date: 2020-08-19 12:58:20

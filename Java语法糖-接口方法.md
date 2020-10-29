@@ -1,10 +1,9 @@
 ---
 title: Java语法糖--接口方法
 tags:
-categories:
-  - notes
-  - java
   - 语法糖
+categories:
+  - java
 abbrlink: 4ee571a7
 date: 2020-04-20 11:52:31
 ---

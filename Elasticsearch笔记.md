@@ -3,7 +3,6 @@ title: Elasticsearch笔记
 tags:
   - elasticsearch
 categories:
-  - notes
   - 后端
 abbrlink: e97d3f23
 date: 2020-09-23 19:35:31

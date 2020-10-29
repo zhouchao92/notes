@@ -1,10 +1,9 @@
 ---
 title: Java语法糖--var类型和switch
 tags:
-categories:
-  - notes
-  - java
   - 语法糖
+categories:
+  - java
 abbrlink: ab1a490c
 date: 2020-04-20 13:06:13
 ---

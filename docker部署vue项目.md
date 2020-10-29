@@ -5,8 +5,7 @@ tags:
   - vue
   - nginx
 categories:
-  - notes
-  - 后端
+  - 前端
 abbrlink: 2d5c549e
 date: 2020-08-22 10:27:51
 ---

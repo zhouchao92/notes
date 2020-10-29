@@ -4,7 +4,6 @@ tags:
   - solr
   - docker
 categories:
-  - notes
   - 后端
 abbrlink: 8e2b9641
 date: 2020-08-18 19:02:42

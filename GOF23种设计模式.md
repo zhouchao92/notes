@@ -1,7 +1,7 @@
 ---
 title: GOF23种设计模式
 categories:
-  - notes
+  - java
 abbrlink: 42ae4d28
 date: 2020-09-09 12:09:26
 tags:

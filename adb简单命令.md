@@ -2,17 +2,19 @@
 title: adb简单命令
 tags:
   - adb
+categories:
+  - android
 abbrlink: 9632f7ff
 date: 2020-04-03 12:00:00
 ---
 
-#### 设备
+##### 设备
 ###### 1. 设备查看
 ```shell
 adb devices
 ```
 ###### 2. 设备重新挂载 
-对android的内部系统文件进行查看,需要获得root权限(adb root)，模拟器Android 6.0以后需要第三方软件root才能成功
+对android的内部系统文件进行查看,需要获得root权限(adb root)，模拟器Android 6.0以后需要第三方软件root才能成功。
 ```shell
 adb remount
 //有的Android系统需要两次root才能挂载
@@ -35,7 +37,7 @@ adb -s 设备名称(devices查看) 命令
 ```
 <!--more-->
 
-#### 常用shell命令
+##### 常用shell命令
 
 - 列出所有文件   ls(相当于dos中的dir命令)
 - 切换路径    cd
@@ -47,7 +49,7 @@ adb -s 设备名称(devices查看) 命令
 - 文本内容查看    cat 文件名(注意带后缀) (*.后缀名 打开本路径下所有的此后缀的文件) 
 - 清除屏幕	clear
 
-####  Push与Pull
+#####  Push与Pull
 ###### 把文件推进系统
 ```shell
 adb push (本地)文件路径 (android)文件新路径
@@ -56,7 +58,7 @@ adb push (本地)文件路径 (android)文件新路径
 ```shell
 adb pull (android)文件路径 (本地)文件路径
 ```
-#### logcat
+##### logcat
 ###### 捕捉
 用于抓取log日志
 
@@ -72,7 +74,7 @@ adb logcat | grep START (grep为Linux系统的指令)
 adb logcat | findstr START (Win10系统下)
 ```
 
-#### adb控制应用
+##### adb控制应用
 ###### 安装应用
 ```shell
 adb install 应用的全路径(.apk文件)
@@ -90,13 +92,13 @@ adb shell pm clear 包名路径
 adb uninstall 包名路径	
 ```
 
-#### 发送广播
+##### 发送广播
 
 ```shell
 adb shell broadcast -a [action] 参数[--类型 key value]
 ```
 
-#### 截屏
+##### 截屏
 
 截图，存放在指定位置，拖出系统到当前路径下
 
@@ -105,7 +107,7 @@ adb shell screencap -p /sdacrd/screen.png
 adb pull /sdcard/screen.png ./
 ```
 
-#### 模拟按键
+##### 模拟按键
 
 ```shell
 adb shell input keyevent 键码(keycode)

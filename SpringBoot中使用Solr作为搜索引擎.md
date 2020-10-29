@@ -4,7 +4,6 @@ tags:
   - spring boot
   - solr
 categories:
-  - notes
   - 后端
 abbrlink: 4499c37a
 date: 2020-08-18 13:29:17

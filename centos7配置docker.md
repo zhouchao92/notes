@@ -4,7 +4,6 @@ tags:
   - centos7
   - docker
 categories: 
-  - notes
   - 后端
 abbrlink: 55112ca0
 date: 2020-08-19 12:28:28

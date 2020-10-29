@@ -3,7 +3,6 @@ title: Java--泛型
 tags:
   - 泛型
 categories:
-  - notes
   - java
 abbrlink: 8b379c6c
 date: 2020-05-29 19:38:50

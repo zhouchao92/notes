@@ -3,7 +3,6 @@ title: Redis笔记
 tags:
   - redis
 categories:
-  - notes
   - 后端
 abbrlink: bf90371e
 date: 2020-07-08 08:48:27

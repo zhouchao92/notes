@@ -3,17 +3,12 @@ title: SpringBoot笔记
 tags:
   - spring boot
 categories:
-  - notes
   - 后端
 abbrlink: e94425f6
 date: 2020-06-29 09:35:50
 ---
 
-# SpringBoot笔记
-
 > 官方文档：[springboot](https://spring.io/projects/spring-boot)
-
-## SpringBoot基础
 
 #### 特征
 
@@ -24,15 +19,13 @@ date: 2020-06-29 09:35:50
 - 提供可用于生产的功能，例如指标，运行状况检查和外部化配置
 - 完全没有代码生成，也不需要XML配置
 
+<!--more-->
+
 #### 版本介绍
 
-**SNAPSHOT**：开发版
-
-**CURRENT**：最新版，不一定是稳定版
-
-**GA**：General Availability 正式发布的版本
-
-<!--more-->
+- **SNAPSHOT**：开发版
+- **CURRENT**：最新版，不一定是稳定版
+- **GA**：General Availability 正式发布的版本
 
 #### 创建基于SpringBoot的项目
 
@@ -142,9 +135,7 @@ SpringBoot的父级依赖，只有继承它才是SpringBoot项目
 ```
 
 启动器依赖
-举例：web启动器
-
-可使用第三方启动器
+举例：web启动器，可使用第三方启动器。
 
 ###### 插件
 
@@ -159,7 +150,7 @@ SpringBoot的父级依赖，只有继承它才是SpringBoot项目
 </build>
 ```
 
-`spring-boot-maven-plugin` 插件是将`springboot`的应用程序打包成`jar`包的插件。将所有应用启动运行所需要的`jar`包都包含进来，从逻辑上将具备了独立运行软件的条件。当运行`mvn package`进行打包后，使用`java-jar`命令就可以直接运行
+`spring-boot-maven-plugin` 插件是将`springboot`的应用程序打包成`jar`包的插件。将所有应用启动运行所需要的`jar`包都包含进来，从逻辑上将具备了独立运行软件的条件。当运行`mvn package`进行打包后，使用`java-jar`命令就可以直接运行。
 
 ##### 启动类
 
@@ -197,7 +188,7 @@ public class SpringBootDemoApplication {
 
 ##### 启动器
 
-Spring Boot 将所有的功能场景都抽取出来，做成一个个的 starter ，只要在项目里引入这些 starter 相关场景的所有依赖都会导入进来，要用什么功能就导入什么场景，在`jar`包上管理非常方便，最终实现一站式开发
+Spring Boot 将所有的功能场景都抽取出来，做成一个个的 starter ，只要在项目里引入这些 starter 相关场景的所有依赖都会导入进来，要用什么功能就导入什么场景，在`jar`包上管理非常方便，最终实现一站式开发。
 
 Spring Boot 提供多达 44 个启动器
 
@@ -217,7 +208,7 @@ Spring Boot 提供多达 44 个启动器
 
 ##### 配置文件
 
-Spring Boot 提供一个名称为application的全局配置文件，支持两种格式：Properties格式和YAML格式
+Spring Boot 提供一个名称为application的全局配置文件，支持两种格式：Properties格式和YAML格式。
 
 ###### Properties格式
 
@@ -229,7 +220,7 @@ server.port=3000
 
 ###### YAML格式
 
-YAML格式的扩展名可以是`.yaml`或`.yml`
+YAML格式的扩展名可以是`.yaml`或`.yml`。
 
 基本格式：
 
@@ -256,9 +247,9 @@ server:
 
 ###### 不同格式的加载顺序
 
-如果在同一个目录下有application.yml 也有 application.properties，默认先读取application.properties
+如果在同一个目录下有application.yml 也有 application.properties，默认先读取application.properties。
 
-如果同一个配置属性，在多个配置文件都配置了，默认使用第一个读取到的，后面读取的不覆盖前面读取的
+如果同一个配置属性，在多个配置文件都配置了，默认使用第一个读取到的，后面读取的不覆盖前面读取的。
 
 ###### 不同位置的加载顺序
 

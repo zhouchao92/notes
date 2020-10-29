@@ -3,7 +3,6 @@ title: MyBatis笔记
 tags:
   - mybatis
 categories:
-  - notes
   - 后端
 abbrlink: '93fcac00'
 date: 2020-06-30 14:52:53

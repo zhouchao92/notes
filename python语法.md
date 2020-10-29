@@ -2,12 +2,9 @@
 title: python语法
 catrgories:
   - python
-  - notes
 abbrlink: 81b2f4bf
 date: 2020-04-03 12:00:00
 ---
-
-## python语法
 
 python官方网站 [python](https://www.python.org)  
 

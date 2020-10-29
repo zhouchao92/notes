@@ -4,7 +4,6 @@ tags:
   - docker
   - mysql
 categories: 
-  - notes
   - 后端
 abbrlink: 1a3905c2
 date: 2020-08-19 12:58:06

@@ -3,14 +3,12 @@ title: java数据结构与算法--串
 tags:
   - 串
 categories:
-  - notes
-  - java
   - 数据结构与算法
 abbrlink: 7e56a691
 date: 2020-04-10 14:00:00
 ---
 
-内容受限的线性表
+内容受限的线性表。
 
 #### 串的定义
 

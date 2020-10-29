@@ -3,8 +3,6 @@ title: java数据结构与算法--线性表
 tags:
   - 线性表
 categories:
-  - notes
-  - java
   - 数据结构与算法
 abbrlink: 5b4e0ff4
 date: 2020-04-10 13:10:08

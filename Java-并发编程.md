@@ -3,7 +3,6 @@ title: Java--并发编程
 tags:
   - 并发编程
 categories:
-  - notes
   - java
 abbrlink: f0f7baf0
 date: 2020-05-24 12:01:52
