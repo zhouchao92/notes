@@ -32,31 +32,27 @@ date: 2020-06-27 22:55:36
 
 <!--more-->
 
-#### 入门案例
-
-[Spring主页](https://repo.spring.io/webapp/#/home)
-
-[Spring框架](https://repo.spring.io/release/org/springframework/spring/)
-
 ### IOC
 
 #### IOC（概念和原理）
 
 ##### IOC（Inversion of Control）
 
-- 控制反转，把对象创建和对象之间额调用过程交给Spring进行管理
-- 使用IOC目的：为了耦合度降低
-- 入门案例就是IOC实现
+控制反转，把对象创建和对象之间的调用过程交给Spring进行管理。
+
+使用IOC目的：为了耦合度降低。
 
 ##### IOC底层原理
 
-xml解析、工厂模式、反射
+- xml解析
+- 工厂模式
+- 反射
 
 ##### IOC过程
 
 xml配置文件，配置创建的对象	`<bean id="" class=""></bean>`
 
-Service类和Dao类，创建工厂类
+Service类和Dao类，创建工厂类。（进一步降低耦合度）
 
 ```java
 class UserFactory{
@@ -69,33 +65,28 @@ class UserFactory{
 }
 ```
 
-进一步降低耦合度
-
 ##### IOC接口
 
-- IOC思想基于IOC容器完成，IOC底层就是对象工厂
+- IOC思想基于IOC容器完成，IOC底层就是对象工厂。
 
 - Spring提供IOC容器实现的两种方式（2个接口）
-  BeanFactory：IOC容器基本实现，是Spring内置接口，不提供开发人员进行使用
-
-  加载配置文件时不会创建对象， 在获取对象或适用对象时才会创建
-
-  ApplicationContext：BeanFactory接口的子接口，提供更强大的功能，一般由开发人员进行使用
-  加载配置文件时就会把在配置文件对象进行创建
-
-- ApplicationContext接口实现类
-  FileSystemXmlApplicationContext	
-  ClassPathXmlApplicationContext
+  - BeanFactory：IOC容器基本实现，是Spring内置接口，不提供开发人员进行使用。
+  加载配置文件时不会创建对象， 在获取对象或适用对象时才会创建。
+  - ApplicationContext：BeanFactory接口的子接口，提供更强大的功能，一般由开发人员进行使用。
+  加载配置文件时就会把在配置文件对象进行创建。
+  
+- `ApplicationContext`接口实现类
+  `FileSystemXmlApplicationContext`
+  `ClassPathXmlApplicationContext`
 
 #### IOC操作Bean管理
 
-Bean管理
+Bean管理，Bean管理指的是两个操作：
 
-- Bean管理指的是两个操作
 - Spring创建对象
 - Spring注入属性
 
-Bean管理操作两种方式
+Bean管理操作两种方式：
 
 - 基于xml配置文件方式实现
 - 基于注解方式实现
@@ -104,20 +95,20 @@ Bean管理操作两种方式
 
 ##### 基于xml方式创建对象 
 
-- 在Spring配置文件中，使用bean标签，标签里面添加对应的属性，就可以实现对象创建
-- 在bean标签中有很多属性，常用属性
-  id属性：唯一标识
-  class属性：类全路径（包名路径）
-  name属性：旧版本常用与id类似
-- 创建对象时，默认执行无参构造方法完成对象创建
+- 在Spring配置文件中，使用bean标签，标签里面添加对应的属性，就可以实现对象创建。
+- 在bean标签中有很多属性，常用属性：
+  - id属性：唯一标识
+  - class属性：类全路径（包名路径）
+  - name属性：旧版本常用与id类似
+- 创建对象时，默认执行无参构造方法完成对象创建。
 
 ##### 基于xml方式注入属性
 
-DI（Dependency Injection）：依赖注入，注入属性
+DI（Dependency Injection）：依赖注入，注入属性。
 
-###### 第一种注入方式：使用set方法进行注入
+###### 第一种注入方式：set方法进行注入
 
-1. 创建类，定义属性和相应的set方法
+1. 创建类，定义属性和相应的set方法。
 
 2. 在Spring配置文件
 
@@ -128,7 +119,7 @@ DI（Dependency Injection）：依赖注入，注入属性
    </bean>
    ```
 
-###### 第二种注入方式：使用有参构造方法进行注入
+###### 第二种注入方式：有参构造方法进行注入
 
 1. 创建类，定义属性，创建相应的有参构造方法
 
@@ -140,12 +131,14 @@ DI（Dependency Injection）：依赖注入，注入属性
        <constructor-arg name="address" value="China"/>
    </bean>	
    ```
-   
-3. p名称空间注入：使用p名称空间注入，可以简化基于xml注入方式。
-   
-4. 添加p名称空间在配置文件中 `xmlns:p="http://www.springframework.org/schema/p"`
 
-5. 进行属性注入，在bean标签里面进行操作
+###### p名称空间注入
+
+1. p名称空间注入：使用p名称空间注入，可以简化基于xml注入方式。
+
+2. 添加p名称空间在配置文件中 `xmlns:p="http://www.springframework.org/schema/p"`
+
+3. 进行属性注入，在bean标签里面进行操作
 
    ```xml
    <bean id="b" class="com.spring5.Book" p:name="Spring5"></bean>
@@ -165,7 +158,7 @@ null值
 
 ##### 属性值包含特殊符号
 
-1. <>尖括号进行转译	`lt;` `gt;`
+1. <>尖括号进行转译：`lt;` `gt;`
 
 2. 把特殊符号内容写到CDATA
 
@@ -744,12 +737,12 @@ JdbcTemplate实现批量操作`batchUpdate(String sql,List<Object[]> batchArgs)`
 | NESTED       | 如果有事务在运行，当前的方法就应该在这个事务的嵌套事务内运行，否则，就启动一个新的事务，并在它自己的事务内运行 |
 
 
-| 隔离级别                    | 脏读 | 不可读 | 虚读 |
-| --------------------------- | ---- | ------ | ---- |
-| READ_UNCOMMITED（读未提交） | 有   | 有     | 有   |
-| READ_COMMITTED（读已提交）  | 无   | 有     | 有   |
-| REPEATABLE_READ（可重复读） | 无   | 无     | 有   |
-| SERIALIZABLE（串行化）      | 无   | 无     | 无   |
+| 隔离级别                               | 脏读 | 不可重复读 | 虚读 |
+| -------------------------------------- | ---- | ---------- | ---- |
+| READ_UNCOMMITED（读未提交）            | 有   | 有         | 有   |
+| READ_COMMITTED（读已提交，不可重复读） | 无   | 有         | 有   |
+| REPEATABLE_READ（可重复读）            | 无   | 无         | 有   |
+| SERIALIZABLE（串行化）                 | 无   | 无         | 无   |
 
 ##### 事务操作（XML声明式事务管理）
 
@@ -765,48 +758,64 @@ JdbcTemplate实现批量操作`batchUpdate(String sql,List<Object[]> batchArgs)`
 
 ### Spring5 框架新特性
 
-1. 整个Spring5框架的代码基于Java8，运行时兼容JDK9，许多不建议使用的类和方法在代码库中删除。
+Spring5 框架在 Spring 之前版本有了一些新的改变，并引入新的特性。
 
-2. Spring5框架自带了通用的日志封装；
-   Spring5已经移除Log4jConfigListener，官方建议使用Log4j2。
-   Spring5框架整合Log4j2。
+#### Spring5 框架的变化
 
-   1. 引入jar包
-      `log4j-api-2`
-      `log4j-core-2`
-      `log4j-slf4j-impl-2`
-      `slf4j-api`
-   2. 创建`log4j2.xml`
+- 底层代码版本基于 Java8
+- Log4j2日志封装
+- `@Nullable`注解
+- 函数式风格
+- 整合JUnit5
 
-3. Spring5框架核心容器支持`@Nullable`注解
-   @Nullable注解可以用在方法、属性、参数上，表示方法返回值可以为空，属性值可以为空，参数值可以为空。
+##### 底层代码版本基于Java8
 
-4. Spring5核心容器支持函数式风格GenericApplicationContext。
-   注册对象
+整个Spring5框架的代码基于Java8，运行时兼容JDK9，许多不建议使用的类和方法在代码库中删除。
 
-5. Spring5支持整合JUnit5
+##### Log4j2日志封装
 
-   - 整合JUnit4
+Spring5 框架自带了通用的日志封装；Spring5 已经移除`Log4jConfigListener`，官方建议使用 Log4j2。Spring5 框架整合Log4j2。
 
-     1. 引入Spring相关针对测试依赖
-        spring-test
-     2. 编写测试类
-        `@RunWith(SpringJUnit4ClassRunner.class)`
-        `@ContextConfiguration("classpath:.xml")`	
+1. 引入jar包
+   `log4j-api-2`
+   `log4j-core-2`
+   `log4j-slf4j-impl-2`
+   `slf4j-api`
+2. 创建`log4j2.xml`
 
-     <font color=red>注意：<code>@Test</code>导入的包为<code>import org.junit.Test;</code></font>
+##### `@Nullable`注解
 
-   - 整合JUnit5
+Spring5框架核心容器支持`@Nullable`注解。`@Nullable`注解可以用在方法、属性、参数上，表示方法返回值可以为空，属性值可以为空，参数值可以为空。
 
-     1. 引入JUnit的jar包
-     2. 编写测试类
-        `@ExtendWith(SpringExtension.class)`
-        `@ContextConfiguration("classpath:.xml")`
+##### 函数式风格
 
-     <font color=red>注意：<code>@Test</code>导入的包为<code>import org.junit.jupiter.api.Test;</code></font>
+Spring5核心容器支持函数式风格`GenericApplicationContext`。
 
-   - 使用复合注解
-     `@SpringJUnitConfig(locations="classpath:.xml")`
+##### 整合JUnit5
+
+Spring5支持整合JUnit5。
+
+- 整合JUnit4
+
+  1. 引入Spring相关针对测试依赖
+     spring-test
+  2. 编写测试类
+     `@RunWith(SpringJUnit4ClassRunner.class)`
+     `@ContextConfiguration("classpath:.xml")`	
+
+  <font color=red>注意：<code>@Test</code>导入的包为<code>import org.junit.Test;</code></font>
+
+- 整合JUnit5
+
+  1. 引入JUnit的jar包
+  2. 编写测试类
+     `@ExtendWith(SpringExtension.class)`
+     `@ContextConfiguration("classpath:.xml")`
+
+  <font color=red>注意：<code>@Test</code>导入的包为<code>import org.junit.jupiter.api.Test;</code></font>
+
+- 使用复合注解
+  `@SpringJUnitConfig(locations="classpath:.xml")`
 
 #### SpringWebFlux
 

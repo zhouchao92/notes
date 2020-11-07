@@ -4,7 +4,6 @@ tags:
   - aqs
   - 并发编程
 categories:
-  - notes
   - java
 abbrlink: 74f18f35
 date: 2020-07-11 20:29:29

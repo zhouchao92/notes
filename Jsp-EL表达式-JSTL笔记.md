@@ -14,11 +14,9 @@ date: 2020-07-12 10:45:37
 
 #### 概念
 
-Java Server Pages，Java服务器页面
-
-简化的Servlet设计
-
-动态网页技术标准（数据的动态改变）
+- Java Server Pages，Java服务器页面
+- 简化的Servlet设计
+- 动态网页技术标准（数据的动态改变）
 
 ##### 特点
 
@@ -29,7 +27,7 @@ Java Server Pages，Java服务器页面
 
 ##### 访问原理
 
-Tomcat只能识别Servlet，用户访问jsp文件，服务器用JspServlet将jsp文件转义成对应的Java文件，返回给用户
+Tomcat只能识别Servlet，用户访问jsp文件，服务器用JspServlet将jsp文件转义成对应的Java文件，返回给用户。
 
 ```xml
 <servlet>
@@ -54,7 +52,7 @@ Tomcat只能识别Servlet，用户访问jsp文件，服务器用JspServlet将jsp
 
 ##### 使用
 
-<font color='blue'>JSP负责页面展现，Sevlet负责业务逻辑处理</font>
+<font color='blue'>JSP负责页面展现，Sevlet负责业务逻辑处理。</font>
 
 <!--more-->
 
@@ -68,11 +66,11 @@ Jsp三大指令
 
 ##### jsp的三种注释
 
-前端语言注释(html,css,js)：会被转译，也会被发送，但是不会被浏览器执行
+前端语言注释(html,css,js)：会被转译，也会被发送，但是不会被浏览器执行。
 
-java语言注释(行注释，块注释，文档注释)：会被转译，但是不会被servlet执行
+java语言注释(行注释，块注释，文档注释)：会被转译，但是不会被servlet执行。
 
-jsp注释：不会被转译
+jsp注释：不会被转译。
 
 ##### jsp的page指令
 
@@ -80,26 +78,26 @@ jsp注释：不会被转译
 
 作用：配置jsp文件的转译相关的参数
 
-- language:声明jsp要被转译的语言
-- import:声明转译java的java文件要导入的包，不同的包使用逗号隔开
-- pageEncoding:设置jsp文件的数据编码格式
-- contentType:设置jsp数据响应给浏览器时，浏览器的解析和编码格式
-- session:设置转译的Servlet是否开启session支持，默认开启，true开启，false关闭
-- errorPage:设置jsp运行错误跳转的页面
-- extends:设置jsp转译的java文件要继承的父类（包名+类名）
+- `language`：声明jsp要被转译的语言
+- `import`：声明转译java的java文件要导入的包，不同的包使用逗号隔开
+- `pageEncoding`：设置jsp文件的数据编码格式
+- `contentType`：设置jsp数据响应给浏览器时，浏览器的解析和编码格式
+- `session`：设置转译的Servlet是否开启session支持，默认开启，true开启，false关闭
+- `errorPage`：设置jsp运行错误跳转的页面
+- `extends`：设置jsp转译的java文件要继承的父类（包名+类名）
 
 ##### jsp的局部代码块
 
 特点
 
-- 布局代码块中声明的java代码会被原样转译到jsp对应的Servlet文件的_JspService方法中
-- 代码块中声明的变量都是局部变量
+- 布局代码块中声明的java代码会被原样转译到jsp对应的Servlet文件的_JspService方法中。
+- 代码块中声明的变量都是局部变量。
 
 使用：`<%java代码块%>`
 
-缺点：使用局部代码块在jsp中进行逻辑判断，书写麻烦，阅读困难
+缺点：使用局部代码块在jsp中进行逻辑判断，书写麻烦，阅读困难。
 
-开发：使用Sevlet进行请求逻辑处理，使用jsp进行页面展现
+开发：使用Sevlet进行请求逻辑处理，使用jsp进行页面展现。
 
 ##### jsp的全局代码块
 
@@ -111,13 +109,13 @@ jsp注释：不会被转译
 
 ##### jsp的脚本段语句
 
-特点：帮助开发人员快速地获取变量或者方法的返回值作为数据响应给浏览器    
+特点：帮助开发人员快速地获取变量或者方法的返回值作为数据响应给浏览器。
 
 使用：`<%=变量名或者方法%>`    <===>   out.write(变量名或方法);
 
 <font color='red'>注意：不要在变量名或者方法后使用分号</font>
 
-位置：除jsp语法要求以外的任意位置
+位置：除jsp语法要求以外的任意位置。
 
 ##### jsp的静态引入和动态引入
 
@@ -127,14 +125,14 @@ jsp注释：不会被转译
 
 特点：
 
-- 会将引入的jsp文件和当前jsp文件转译成一个java（Servlet）文件使用
-- 在网页中也就显示了合并后的显示效果
+- 会将引入的jsp文件和当前jsp文件转译成一个java（Servlet）文件使用。
+- 在网页中也就显示了合并后的显示效果。
 
 注意：
 
-- 静态引入的jsp文件<font color='red'>不会</font>单独转译成java（Servlet）文件
-- 同名变量    编译报错 Duplicate local variable
-- 当前文件和静态引入的jsp文件中<font color='red'>不能</font>使用java代码块声明同名变量
+- 静态引入的jsp文件<font color='red'>不会</font>单独转译成java（Servlet）文件。
+- 同名变量，编译报错 Duplicate local variable。
+- 当前文件和静态引入的jsp文件中<font color='red'>不能</font>使用java代码块声明同名变量。
 
 ###### 动态引入
 
@@ -142,27 +140,30 @@ jsp注释：不会被转译
 
 特点：
 
-- 会将引入的jsp文件单独转译，在当前文件转译好的java文件中调用引入的jsp文件的转译文件
-- 在网页中显示合并后的显示效果
+- 会将引入的jsp文件单独转译，在当前文件转译好的java文件中调用引入的jsp文件的转译文件。
+- 在网页中显示合并后的显示效果。
 
-注意：动态引入<font color='red'>允许</font>文件中声明同名变量
+注意：动态引入<font color='red'>允许</font>文件中声明同名变量。
 
-优点：降低jsp代码的冗余，便于维护升级
+优点：降低jsp代码的冗余，便于维护升级。
 
 ##### jsp的转发标签
 
-使用：`<jsp:forward page="jsp文件相对地址"></jsp:forward>`	jsp文件<font color='red'>相对地址</font>
+使用：`<jsp:forward page="jsp文件相对地址"></jsp:forward>`	jsp文件<font color='red'>相对地址</font>。
 
 特点
 
 - 一次请求
 - 地址栏信息不变
 
-注意：<font color='red'>在转发标签的两个标签中间除了写</font>`<jsp:param name="" value=""/>`<font color='red'>子标签不会报错，其他任意字符都会报错</font>
+注意：<font color='red'>在转发标签的两个标签中间除了写</font>`<jsp:param name="" value=""/>`<font color='red'>子标签不会报错，其他任意字符都会报错</font>。
 `<%=request.getParameter("键名")%>`
-name属性为附带的数据的键名
-value属性为附带的数据的内容
-会将数据以?的形式在转发路径的后面
+
+- name属性为附带的数据的键名
+
+- value属性为附带的数据的内容
+
+  会将数据以?的形式在转发路径的后面。
 
 ```jsp
 <jsp:forward page="要转发的jsp文件的相对路径">
@@ -184,9 +185,9 @@ jsp文件在转译其对应的Servlet文件的时候自动生成的并声明的�
 
 ###### PageContext对象
 
-页面上下文对象，封存了其他内置对象。封存了当前jsp的运行信息
+页面上下文对象，封存了其他内置对象。封存了当前jsp的运行信息。
 
-注意：每个jsp文件单独拥有一个PageContext对象
+注意：每个jsp文件单独拥有一个PageContext对象。
 
 作用域：当前页面
 
@@ -222,41 +223,40 @@ ServletContext对象，一个项目只有一个，存储用户共享数据的对
 
 ###### Out对象
 
-响应对象，jsp内部使用，带有缓冲区的响应对象，效率高于response对象
+响应对象，jsp内部使用，带有缓冲区的响应对象，效率高于response对象。
 
 ###### Page对象
 
-代表当前jsp对象，相当于java的this
+代表当前jsp对象，相当于java的`this`。
 
 ###### Exception对象
 
-异常对象，存储了当前运行的异常信息
+异常对象，存储了当前运行的异常信息。
 
 注意：使用此对象需要在page指定使用属性isErrorPage="true"开启
 
 ###### Congfig对象
 
-ServletConfig对象，主要用来获取web.xml中的配置数据，完成一些初始化数据据的读取
+ServletConfig对象，主要用来获取web.xml中的配置数据，完成一些初始化数据据的读取。
 
 ###### 四个作用域对象
 
-pageContext：当前对象，解决了在当前页面的数据共享问题。获取其他内置对象
+pageContext：当前对象，解决了在当前页面的数据共享问题。获取其他内置对象。
 
-request:一次请求，一次请求的servlet的数据共享。通过请求转发将数据流转给下一个Servlet
+request：一次请求，一次请求的servlet的数据共享。通过请求转发将数据流转给下一个Servlet。
 
-session:一次会话，一个用户的不同请求的数据共享。将数据从一次请求流转给其他请求
+session：一次会话，一个用户的不同请求的数据共享。将数据从一次请求流转给其他请求。
 
-application:项目内，不同用户的数据共享问题。将数据从一个用户流转给其他用户
+application：项目内，不同用户的数据共享问题。将数据从一个用户流转给其他用户。
 
-作用：数据流转
+作用：数据流转。
 
 #### jsp资源路径
 
 在jsp中资源路径可以使用相对路径完成跳转，存在的问题
 
-问题一：资源的位置不可随意更改
-
-问题二：需要使用`../`进行文件夹的跳出，使用比较麻烦
+1. 资源的位置不可随意更改。
+2. 需要使用`../`进行文件夹的跳出，使用比较麻烦。
 
 ##### 使用绝对路径
 
@@ -286,7 +286,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 </html>
 ```
 
-作用：给资源前面添加项目路径http://127.0.0.1:8080/虚拟项目名/
+作用：给资源前面添加项目路径http://127.0.0.1:8080/虚拟项目名/。
 
 ### EL表达式
 
@@ -295,7 +295,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
  * Servlet进行请求处理后，使用作用域对象作为数据流转的载体，将数据流转给对应的jsp文件
  * 在jsp中获取作用域中的数据
 
-传统方式：在jsp页面中使用java脚本段语句
+传统方式：在jsp页面中使用java脚本段语句。
 
 传统方式获取作用域数据
 
@@ -401,11 +401,11 @@ jsp文件
 
 #### 作用
 
-让jsp书写起来更加的方便，简化在jsp中获取作用域或者请求数据的写法，也会搭配JSTL来进行使用
+让jsp书写起来更加的方便，简化在jsp中获取作用域或者请求数据的写法，也会搭配JSTL来进行使用。
 
 #### 使用
 
-语法结构：$(expression)提供`.`和`[]`两种运算符来存取数据	
+语法结构：$(expression)提供`.`和`[]`两种运算符来存取数据。
 
 ##### 使用EL表达式获取请求数据
 
@@ -462,7 +462,7 @@ ${cookie.JSESSIONID.value}
 
 默认查找顺序：pageContext-->reqeust-->session-->application
 
-<font color='red'>注意：每次查找都从小到大进行查找，找到了则获取，不再继续找了</font>
+<font color='red'>注意：每次查找都从小到大进行查找，找到了则获取，不再继续找了。</font>
 
 ###### 获取指定作用域的数据
 
@@ -481,7 +481,7 @@ ${cookie.JSESSIONID.value}
 
 三目运算\${三目表达式}
 
-<font color='red'>注意：</font>`+`<font color='red'>表示加法运算，不表示字符连接，使用EL表达式进行字符连接会报错</font>
+<font color='red'>注意：</font>`+`<font color='red'>表示加法运算，不表示字符连接，使用EL表达式进行字符连接会报错。</font>
 
 ```jsp
 1+3=>${1+3}<br>
@@ -499,7 +499,7 @@ ${cookie.JSESSIONID.value}
 
 ${empty 键名}
 
-作用：判断键名对象的值是否存有数据
+作用：判断键名对象的值是否存有数据。
 
 ### JSTL标签库
 
@@ -556,7 +556,7 @@ JSTL是apache对EL表达式的扩展（JSTL依赖于EL），JSTL是标签语言�
 
 - var:表示要删除的键的名字
 - scrope:表示要删除的作用域(可选)
-- <font color='red'>注意：如果在不指定作用域的情况使用该标签删除数据，会将四个作用域对象中的符合要求的数据全部删除</font>
+- <font color='red'>注意：如果在不指定作用域的情况使用该标签删除数据，会将四个作用域对象中的符合要求的数据全部删除。</font>
 
 ###### 逻辑标签
 
@@ -606,11 +606,10 @@ JSTL是apache对EL表达式的扩展（JSTL依赖于EL），JSTL是标签语言�
 
 - items：声明要遍历的对象，结合EL表达式获取对象
 
-- var：声明变量记录每次循环的结果，存储在作用域中，通过EL表达式获取对象
-
-数据
+- var：声明变量记录每次循环的结果，存储在作用域中，通过EL表达式获取对象。
 
 ```jsp
+<%--数据--%>
 <%
 ArrayList<String> list = new ArrayList<>();
 list.add("a");
