@@ -684,7 +684,7 @@ JdbcTemplate实现批量操作`batchUpdate(String sql,List<Object[]> batchArgs)`
    1. 基于注解方法
    2. 基于xml配置文件方式
 4. 在Spring进行声明式事务管理，底层使用AOP原理
-5. SPring事务管理API
+5. Spring事务管理API
    PlatformTransactionManager 接口--事务管理器，针对不同框架提供不同实现类
 
 ##### 事务操作（注解声明式事务管理）		
@@ -754,11 +754,11 @@ JdbcTemplate实现批量操作`batchUpdate(String sql,List<Object[]> batchArgs)`
 
 ##### 事务操作（完全注解声明式事务管理）
 
-创建配置类，使用配置类代替。
+创建配置类，使用配置类+注解代替。
 
 ### Spring5 框架新特性
 
-Spring5 框架在 Spring 之前版本有了一些新的改变，并引入新的特性。
+Spring5 框架变化，SpringWebFlux 与 Spring MVC 的横向对比以及响应式编程。
 
 #### Spring5 框架的变化
 
@@ -789,11 +789,11 @@ Spring5框架核心容器支持`@Nullable`注解。`@Nullable`注解可以用在
 
 ##### 函数式风格
 
-Spring5核心容器支持函数式风格`GenericApplicationContext`。
+Spring5 核心容器支持函数式风格`GenericApplicationContext`。
 
 ##### 整合JUnit5
 
-Spring5支持整合JUnit5。
+Spring5 支持整合 JUnit5。
 
 - 整合JUnit4
 
